@@ -51,7 +51,7 @@ This power includes the `awslabs.aws-iac-mcp-server` MCP server which provides t
 ### Validate CloudFormation Template
 
 ```javascript
-usePower("aws-iac", "awslabs.aws-iac-mcp-server", "validate_cloudformation_template", {
+usePower("aws-infrastructure-as-code", "awslabs.aws-iac-mcp-server", "validate_cloudformation_template", {
   "template_content": `
 AWSTemplateFormatVersion: '2010-09-09'
 Resources:
@@ -67,7 +67,7 @@ Resources:
 ### Check Template Compliance
 
 ```javascript
-usePower("aws-iac", "awslabs.aws-iac-mcp-server", "check_cloudformation_template_compliance", {
+usePower("aws-infrastructure-as-code", "awslabs.aws-iac-mcp-server", "check_cloudformation_template_compliance", {
   "template_content": `
 AWSTemplateFormatVersion: '2010-09-09'
 Resources:
@@ -86,7 +86,7 @@ Resources:
 ### Troubleshoot Failed Stack
 
 ```javascript
-usePower("aws-iac", "awslabs.aws-iac-mcp-server", "troubleshoot_cloudformation_deployment", {
+usePower("aws-infrastructure-as-code", "awslabs.aws-iac-mcp-server", "troubleshoot_cloudformation_deployment", {
   "stack_name": "my-app-stack",
   "region": "us-east-1",
   "include_cloudtrail": true
@@ -96,7 +96,7 @@ usePower("aws-iac", "awslabs.aws-iac-mcp-server", "troubleshoot_cloudformation_d
 ### Search CloudFormation Documentation
 
 ```javascript
-usePower("aws-iac", "awslabs.aws-iac-mcp-server", "search_cloudformation_documentation", {
+usePower("aws-infrastructure-as-code", "awslabs.aws-iac-mcp-server", "search_cloudformation_documentation", {
   "query": "AWS::Lambda::Function properties"
 })
 ```
@@ -104,7 +104,7 @@ usePower("aws-iac", "awslabs.aws-iac-mcp-server", "search_cloudformation_documen
 ### Read Full Documentation Page
 
 ```javascript
-usePower("aws-iac", "awslabs.aws-iac-mcp-server", "read_iac_documentation_page", {
+usePower("aws-infrastructure-as-code", "awslabs.aws-iac-mcp-server", "read_iac_documentation_page", {
   "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html"
 })
 ```
@@ -112,7 +112,7 @@ usePower("aws-iac", "awslabs.aws-iac-mcp-server", "read_iac_documentation_page",
 ### Search CDK Documentation
 
 ```javascript
-usePower("aws-iac", "awslabs.aws-iac-mcp-server", "search_cdk_documentation", {
+usePower("aws-infrastructure-as-code", "awslabs.aws-iac-mcp-server", "search_cdk_documentation", {
   "query": "S3 bucket encryption best practices"
 })
 ```
@@ -120,7 +120,7 @@ usePower("aws-iac", "awslabs.aws-iac-mcp-server", "search_cdk_documentation", {
 ### Find CDK Code Samples
 
 ```javascript
-usePower("aws-iac", "awslabs.aws-iac-mcp-server", "search_cdk_samples_and_constructs", {
+usePower("aws-infrastructure-as-code", "awslabs.aws-iac-mcp-server", "search_cdk_samples_and_constructs", {
   "query": "Lambda function with VPC",
   "language": "typescript"
 })
@@ -129,13 +129,13 @@ usePower("aws-iac", "awslabs.aws-iac-mcp-server", "search_cdk_samples_and_constr
 ### Get CDK Best Practices
 
 ```javascript
-usePower("aws-iac", "awslabs.aws-iac-mcp-server", "cdk_best_practices", {})
+usePower("aws-infrastructure-as-code", "awslabs.aws-iac-mcp-server", "cdk_best_practices", {})
 ```
 
 ### Get Pre-Deploy Validation Instructions
 
 ```javascript
-usePower("aws-iac", "awslabs.aws-iac-mcp-server", "get_cloudformation_pre_deploy_validation_instructions", {})
+usePower("aws-infrastructure-as-code", "awslabs.aws-iac-mcp-server", "get_cloudformation_pre_deploy_validation_instructions", {})
 ```
 
 ## AWS Credentials & Permissions
