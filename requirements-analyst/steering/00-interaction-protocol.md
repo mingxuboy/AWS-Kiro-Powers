@@ -32,14 +32,14 @@ I can help you with requirements engineering across 6 phases:
 │ Phase 1: Discovery      │ Stakeholder analysis, personas,  │
 │                         │ journey maps, competitive analysis│
 ├─────────────────────────┼───────────────────────────────────┤
-│ Phase 2: Classification │ FURPS+, KANO model, BR-UR-FR     │
-│                         │ hierarchy                         │
+│ Phase 2: Value Sorting  │ MoSCoW, RICE scoring, business   │
+│                         │ value prioritization              │
 ├─────────────────────────┼───────────────────────────────────┤
 │ Phase 3: Analysis       │ User stories, use cases, event   │
 │                         │ storming, domain modeling         │
 ├─────────────────────────┼───────────────────────────────────┤
-│ Phase 4: Prioritization │ MoSCoW, RICE scoring, release    │
-│                         │ planning, MVP definition          │
+│ Phase 4: Clarification  │ Systematic questioning, ambiguity │
+│                         │ elimination, requirement refining │
 ├─────────────────────────┼───────────────────────────────────┤
 │ Phase 5: Validation     │ Requirements review, GWT criteria,│
 │                         │ prototype testing, traceability   │
