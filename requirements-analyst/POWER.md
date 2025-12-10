@@ -1,7 +1,7 @@
 ---
 name: "requirements-analyst"
 displayName: "Requirements Analyst"
-description: "Complete requirements engineering power with 6-phase methodology: Discovery, Classification, Analysis, Prioritization, Validation, and Specification"
+description: "Complete requirements engineering power with 6-phase methodology: Discovery, Value Sorting, Analysis, Clarification, Validation, and Specification"
 keywords: ["requirements", "analysis", "clarification", "validation", "user stories", "acceptance criteria", "specification", "PRD", "BRD", "FURPS+", "KANO", "MoSCoW", "BDD", "GWT"]
 author: "Kiro User"
 ---

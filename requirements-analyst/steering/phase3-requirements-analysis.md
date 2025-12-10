@@ -26,7 +26,7 @@ inclusion: agent
 **MUST pass this check before starting**:
 
 - [ ] **Phase 2 completed?** All requirements classified and categorized?
-- [ ] **Inputs available?** Classification matrix and hierarchy from Phase 2 ready?
+- [ ] **Inputs available?** Value sorting matrix and prioritization from Phase 2 ready?
 - [ ] **Unclear items identified?** Any requirements needing deeper clarification flagged?
 
 **If ANY check fails**: STOP. NEVER proceed. Return to Phase 2.
@@ -333,7 +333,7 @@ REQ-001 → REQ-005 → REQ-008 → REQ-011 (blocks release)
 
 After completing this phase, proceed to:
 
-**Phase 4: Prioritization**
-- MoSCoW classification
-- RICE scoring
+**Phase 4: Clarification**
+- Systematic questioning to eliminate ambiguity
+- Requirement refinement and validation
 - Release planning

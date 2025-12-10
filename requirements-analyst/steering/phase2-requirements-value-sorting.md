@@ -2,7 +2,7 @@
 inclusion: agent
 ---
 
-# Phase 4: Prioritization
+# Phase 2: Value Sorting
 
 **Phase Objective**: Prioritize requirements and develop release plans.
 **Time Allocation**: 10% of total effort

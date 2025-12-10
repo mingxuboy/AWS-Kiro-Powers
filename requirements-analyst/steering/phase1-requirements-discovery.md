@@ -232,6 +232,6 @@ inclusion: agent
 
 After completing this phase, proceed to:
 
-**Phase 2: Requirements Classification**
-- Use FURPS+ and KANO models to classify requirements
-- Establish BR-UR-FR hierarchy
+**Phase 2: Value Sorting**
+- Use MoSCoW and RICE models to prioritize requirements
+- Establish business value hierarchy

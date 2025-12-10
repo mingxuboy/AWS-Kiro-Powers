@@ -559,7 +559,7 @@ After completing all 6 phases, verify:
 
 - [ ] ✅ Stakeholder list and interview records
 - [ ] ✅ User personas and journey maps
-- [ ] ✅ Requirements classification matrix (FURPS+, KANO)
+- [ ] ✅ Requirements value sorting matrix (MoSCoW, RICE)
 - [ ] ✅ User story maps and use case diagrams
 - [ ] ✅ Priority ranking and release plans
 - [ ] ✅ Validation report and traceability matrix
