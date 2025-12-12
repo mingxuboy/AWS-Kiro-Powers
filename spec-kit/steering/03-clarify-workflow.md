@@ -85,9 +85,11 @@ Create a prioritized queue of clarification questions (maximum 5):
 
 Present EXACTLY ONE question at a time.
 
-**For multiple-choice questions**:
+**For multiple-choice questions (MUST follow this format exactly)**:
 
 ```markdown
+**问题:** [问题背景和具体问题]
+
 **推荐:** 选项 [X] - [推荐理由]
 
 **可选答案:**
@@ -100,9 +102,13 @@ Present EXACTLY ONE question at a time.
 
 ► **其他** - 提供您自己的答案（≤5 个词）
 
+**为什么这个问题重要:** [说明这个决策会影响哪些方面，列出 2-4 个具体影响点]
+
 ---
 回复选项字母（如 "A"），或输入 "yes" 接受推荐，或直接输入您的答案。
 ```
+
+**IMPORTANT**: The "为什么这个问题重要" section is **MANDATORY** for EVERY question. Do NOT skip this section.
 
 **Example (示例)**:
 
@@ -121,18 +127,30 @@ Present EXACTLY ONE question at a time.
 
 ► **其他** - 提供您自己的答案（≤5 个词）
 
+**为什么这个问题重要:** 这个决策会影响：
+- 系统资源的分配策略和负载均衡设计
+- 用户体验（等待时间和公平性）
+- 基础设施成本和扩展性规划
+
 ---
 回复选项字母，或输入 "yes" 接受推荐，或直接输入您的答案。
 ```
 
-**For short-answer questions**:
+**For short-answer questions (MUST follow this format exactly)**:
 
 ```markdown
+**问题:** [问题背景和具体问题]
+
 **建议答案:** [您的建议] - [简要理由]
 
+**为什么这个问题重要:** [说明这个决策会影响哪些方面，列出 2-4 个具体影响点]
+
+---
 请输入简短答案（≤5 个词）。
 输入 "yes" 接受建议，或直接输入您的答案。
 ```
+
+**IMPORTANT**: The "为什么这个问题重要" section is **MANDATORY** for short-answer questions as well.
 
 ### Step 4: Record Answers (MANDATORY - DO NOT SKIP)
 
