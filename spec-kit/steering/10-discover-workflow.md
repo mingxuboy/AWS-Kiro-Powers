@@ -44,6 +44,16 @@ Bootstrap SDD methodology for existing projects by:
 
 **ITERATIVE REFINEMENT**: Generated files are drafts; expect multiple rounds of refinement with user input.
 
+**MERMAID FIRST (MANDATORY)**: When documenting flows, processes, sequences, or relationships:
+- **MUST** use Mermaid syntax as the primary representation
+- **NEVER** use plain text descriptions as a substitute for diagrams
+- Supported diagram types:
+  - `sequenceDiagram` - For API calls, service interactions, user journeys
+  - `flowchart` - For business logic, decision trees, process flows
+  - `erDiagram` - For data models and entity relationships
+  - `classDiagram` - For component structures and dependencies
+- Plain text descriptions are supplementary only, not replacements
+
 ## Execution Flow
 
 ### Step 1: Project Discovery
@@ -154,17 +164,17 @@ Use `templates/product-template.md` as reference. Fill in with:
 - **Business Constraints**: Inferred from code patterns, validations, limits
 - **Success Metrics**: Suggested based on tracked analytics, logs, or metrics code
 - **Non-Functional Requirements**: From caching patterns, auth implementation, data handling
-- **Core Business Flows**: Extract from route handlers, service layer, and domain logic
-  - Identify primary user journeys from controller/handler code
-  - Create sequence diagrams for key interactions
-  - Create flowcharts for complex decision logic
+- **Core Business Flows** (MERMAID REQUIRED): Extract from route handlers, service layer, and domain logic
+  - **MUST** create `sequenceDiagram` for each key user journey and API interaction
+  - **MUST** create `flowchart` for complex business logic and decision trees
   - Document business flow inventory with frequency and criticality
+  - Plain text descriptions are supplementary only
 
 **Business Flow Extraction**:
-- Scan route handlers for user-initiated flows
-- Trace service method call chains
-- Identify transaction boundaries
-- Map async/event-driven flows from message handlers
+- Scan route handlers for user-initiated flows → generate `sequenceDiagram`
+- Trace service method call chains → generate `sequenceDiagram`
+- Identify decision logic and branches → generate `flowchart`
+- Map async/event-driven flows → generate `sequenceDiagram` with async notation
 
 #### B. Generate tech.md
 
@@ -174,17 +184,17 @@ Use `templates/tech-template.md` as reference. Fill in with:
 - **Coding Standards**: Detected naming, error handling, logging patterns
 - **Quality Gates**: Based on existing CI/CD, linting, test setup
 - **Dependency Rules**: Based on existing dependency management
-- **Core Data Structures**: Extract from models, schemas, and entity definitions
-  - Create ER diagram from model relationships
-  - Document each entity with fields, types, and relationships
+- **Core Data Structures** (MERMAID REQUIRED): Extract from models, schemas, and entity definitions
+  - **MUST** create `erDiagram` showing all entity relationships
+  - Document each entity with fields, types, and relationships in tables
   - Identify value objects and DTOs
   - Map entity to table/collection names
 
 **Data Structure Extraction**:
-- Parse ORM models (Sequelize, TypeORM, Prisma, Django models, etc.)
-- Analyze database migration files for schema structure
+- Parse ORM models (Sequelize, TypeORM, Prisma, Django models, etc.) → generate `erDiagram`
+- Analyze database migration files for schema structure → update `erDiagram`
 - Extract TypeScript/Java/Python type definitions
-- Identify foreign key relationships and constraints
+- Identify foreign key relationships and constraints → reflect in `erDiagram`
 
 #### C. Generate structure.md
 

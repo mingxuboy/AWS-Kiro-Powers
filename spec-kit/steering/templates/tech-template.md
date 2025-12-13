@@ -70,8 +70,15 @@ All implementation MUST follow strict TDD:
 ## Core Data Structures
 
 <!--
-  Document the key data models and their relationships.
-  Focus on domain entities that are central to the business logic.
+  MERMAID ER DIAGRAM IS MANDATORY - NOT OPTIONAL.
+
+  Entity relationships MUST be documented with Mermaid `erDiagram`:
+  - Show all entities and their relationships
+  - Include cardinality (one-to-one, one-to-many, many-to-many)
+
+  DO NOT use plain text or ASCII art to describe data models - ALWAYS use Mermaid syntax.
+
+  Tables below are supplementary documentation, not replacements for the ER diagram.
 -->
 
 ### Entity Relationship Overview

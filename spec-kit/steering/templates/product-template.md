@@ -49,9 +49,15 @@ Use this template for `.kiro/steering/product.md`.
 ## Core Business Flows
 
 <!--
-  Document the key business processes of the system.
-  Use Mermaid flowcharts or sequence diagrams for clarity.
-  Focus on user-facing workflows and critical business operations.
+  MERMAID DIAGRAMS ARE MANDATORY - NOT OPTIONAL.
+
+  Every business flow MUST be documented with Mermaid diagrams:
+  - Use `sequenceDiagram` for user journeys, API interactions, service calls
+  - Use `flowchart` for decision logic, process flows, state transitions
+
+  Plain text descriptions are SUPPLEMENTARY ONLY, not replacements for diagrams.
+
+  DO NOT use ASCII art or plain text to describe flows - ALWAYS use Mermaid syntax.
 -->
 
 ### Flow 1: [Primary Business Flow Name]
