@@ -67,6 +67,61 @@ All implementation MUST follow strict TDD:
 - [ ] No security vulnerabilities
 - [ ] Documentation updated
 
+## Core Data Structures
+
+<!--
+  Document the key data models and their relationships.
+  Focus on domain entities that are central to the business logic.
+-->
+
+### Entity Relationship Overview
+
+```mermaid
+erDiagram
+    [Entity1] ||--o{ [Entity2] : "relationship"
+    [Entity2] ||--|| [Entity3] : "relationship"
+```
+
+### Core Entities
+
+#### [Entity Name 1]
+
+**Purpose**: [What this entity represents in the domain]
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| id | UUID/Int | Yes | Primary identifier |
+| [field_name] | [Type] | [Yes/No] | [Description] |
+| created_at | Timestamp | Yes | Creation timestamp |
+| updated_at | Timestamp | Yes | Last update timestamp |
+
+**Relationships**:
+- Has many [Related Entity]
+- Belongs to [Parent Entity]
+
+#### [Entity Name 2]
+
+**Purpose**: [What this entity represents]
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| id | UUID/Int | Yes | Primary identifier |
+| [field_name] | [Type] | [Yes/No] | [Description] |
+
+### Data Model Inventory
+
+| Entity | Table/Collection | Description | Key Relationships |
+|--------|------------------|-------------|-------------------|
+| [Entity 1] | [table_name] | [Brief description] | [Key relationships] |
+| [Entity 2] | [table_name] | [Brief description] | [Key relationships] |
+
+### Value Objects / DTOs
+
+| Name | Purpose | Fields |
+|------|---------|--------|
+| [ValueObject1] | [Purpose] | [Key fields] |
+| [DTO1] | [Purpose] | [Key fields] |
+
 ## Dependency Rules
 
 - [Rules for adding new dependencies]

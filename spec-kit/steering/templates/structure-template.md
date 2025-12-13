@@ -64,9 +64,47 @@ feature/
 └── __tests__/      # Tests
 ```
 
+## External Service Interfaces
+
+<!--
+  Document all externally exposed APIs and services.
+  This is the contract the system provides to external consumers.
+-->
+
+### Service Interface Inventory
+
+| ID | Service/Endpoint | Method | Description | Auth Required | Rate Limit |
+|----|------------------|--------|-------------|---------------|------------|
+| API-001 | [/api/v1/resource] | [GET/POST/etc.] | [What it does] | [Yes/No] | [Limit] |
+| API-002 | [/api/v1/resource/:id] | [Method] | [Description] | [Auth] | [Limit] |
+
+### REST API Endpoints
+
+#### [Resource Name] API
+
+| Endpoint | Method | Description | Request | Response |
+|----------|--------|-------------|---------|----------|
+| `/api/v1/[resource]` | GET | List all [resources] | Query params | Array of [Resource] |
+| `/api/v1/[resource]/:id` | GET | Get single [resource] | Path param | [Resource] object |
+| `/api/v1/[resource]` | POST | Create [resource] | [Resource] body | Created [Resource] |
+| `/api/v1/[resource]/:id` | PUT | Update [resource] | [Resource] body | Updated [Resource] |
+| `/api/v1/[resource]/:id` | DELETE | Delete [resource] | Path param | Success message |
+
+### WebSocket/Event Interfaces
+
+| Channel/Event | Direction | Description | Payload |
+|---------------|-----------|-------------|---------|
+| [event.name] | [In/Out/Bidirectional] | [Description] | [Payload structure] |
+
+### External Integrations
+
+| Integration | Type | Purpose | Endpoint/SDK |
+|-------------|------|---------|--------------|
+| [Service Name] | [REST/gRPC/SDK] | [Why integrated] | [Endpoint or SDK name] |
+
 ## API Patterns
 
-### REST Endpoints
+### REST Conventions
 - `GET /api/[resource]` - List resources
 - `GET /api/[resource]/:id` - Get single resource
 - `POST /api/[resource]` - Create resource
@@ -79,6 +117,17 @@ feature/
   "data": {},
   "error": null,
   "meta": {}
+}
+```
+
+### Error Response Format
+```json
+{
+  "error": {
+    "code": "ERROR_CODE",
+    "message": "Human readable message",
+    "details": {}
+  }
 }
 ```
 

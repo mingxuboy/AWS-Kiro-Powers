@@ -154,6 +154,17 @@ Use `templates/product-template.md` as reference. Fill in with:
 - **Business Constraints**: Inferred from code patterns, validations, limits
 - **Success Metrics**: Suggested based on tracked analytics, logs, or metrics code
 - **Non-Functional Requirements**: From caching patterns, auth implementation, data handling
+- **Core Business Flows**: Extract from route handlers, service layer, and domain logic
+  - Identify primary user journeys from controller/handler code
+  - Create sequence diagrams for key interactions
+  - Create flowcharts for complex decision logic
+  - Document business flow inventory with frequency and criticality
+
+**Business Flow Extraction**:
+- Scan route handlers for user-initiated flows
+- Trace service method call chains
+- Identify transaction boundaries
+- Map async/event-driven flows from message handlers
 
 #### B. Generate tech.md
 
@@ -163,6 +174,17 @@ Use `templates/tech-template.md` as reference. Fill in with:
 - **Coding Standards**: Detected naming, error handling, logging patterns
 - **Quality Gates**: Based on existing CI/CD, linting, test setup
 - **Dependency Rules**: Based on existing dependency management
+- **Core Data Structures**: Extract from models, schemas, and entity definitions
+  - Create ER diagram from model relationships
+  - Document each entity with fields, types, and relationships
+  - Identify value objects and DTOs
+  - Map entity to table/collection names
+
+**Data Structure Extraction**:
+- Parse ORM models (Sequelize, TypeORM, Prisma, Django models, etc.)
+- Analyze database migration files for schema structure
+- Extract TypeScript/Java/Python type definitions
+- Identify foreign key relationships and constraints
 
 #### C. Generate structure.md
 
@@ -170,8 +192,19 @@ Use `templates/structure-template.md` as reference. Fill in with:
 - **Project Layout**: Actual detected structure with descriptions
 - **Naming Conventions**: Detected patterns for files, components, functions, constants
 - **Module Organization**: Detected module patterns and rules
+- **External Service Interfaces**: Complete inventory of exposed APIs and services
+  - Document all REST endpoints with methods, auth, rate limits
+  - List WebSocket/event interfaces
+  - Map external integrations (third-party APIs, SDKs)
 - **API Patterns**: Detected from route definitions
 - **Database Conventions**: Detected from models/migrations
+
+**Service Interface Extraction**:
+- Scan route definitions for all HTTP endpoints
+- Parse OpenAPI/Swagger specs if available
+- Identify WebSocket handlers and event emitters
+- Document authentication requirements per endpoint
+- Extract rate limiting configurations
 
 ### Step 6: Generate Product Specification
 

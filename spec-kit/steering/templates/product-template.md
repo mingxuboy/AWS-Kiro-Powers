@@ -46,6 +46,51 @@ Use this template for `.kiro/steering/product.md`.
 ### Compliance
 - [Compliance requirement if applicable]
 
+## Core Business Flows
+
+<!--
+  Document the key business processes of the system.
+  Use Mermaid flowcharts or sequence diagrams for clarity.
+  Focus on user-facing workflows and critical business operations.
+-->
+
+### Flow 1: [Primary Business Flow Name]
+
+**Description**: [Brief description of what this flow accomplishes]
+
+**Actors**: [Who participates in this flow]
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant System
+    participant [Other]
+
+    User->>System: [Action 1]
+    System->>System: [Processing]
+    System-->>User: [Response]
+```
+
+### Flow 2: [Secondary Business Flow Name]
+
+**Description**: [Brief description]
+
+```mermaid
+flowchart TD
+    A[Start] --> B{Decision}
+    B -->|Yes| C[Action 1]
+    B -->|No| D[Action 2]
+    C --> E[End]
+    D --> E
+```
+
+### Business Flow Inventory
+
+| Flow ID | Name | Description | Frequency | Criticality |
+|---------|------|-------------|-----------|-------------|
+| BF-001 | [Flow Name] | [Brief description] | [Daily/Weekly/etc.] | [High/Medium/Low] |
+| BF-002 | [Flow Name] | [Brief description] | [Frequency] | [Criticality] |
+
 ## Feature Prioritization
 
 [Guidelines for prioritizing features]
