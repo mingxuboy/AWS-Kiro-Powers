@@ -121,6 +121,16 @@ When loading a phase, also load its dependencies:
 
 ---
 
+## Auxiliary Commands
+
+| Command | Intent | Steering File | Description |
+|---------|--------|---------------|-------------|
+| Prototype | Generate UI prototype | `command-prototype.md` | Create static HTML prototype from requirements |
+
+**Trigger**: User says "原型", "prototype", "生成原型", "create prototype"
+
+---
+
 ## Output Structure
 
 ```
@@ -134,5 +144,9 @@ When loading a phase, also load its dependencies:
 ├── prd.md
 ├── api.yaml
 ├── rtm.md
-└── features/*.feature
+├── features/*.feature
+└── prototype/
+    ├── index.html
+    ├── css/
+    └── pages/
 ```
