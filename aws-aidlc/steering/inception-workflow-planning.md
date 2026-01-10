@@ -155,7 +155,7 @@ Evaluate risk level:
 
 ## Step 4: Note Adaptive Detail
 
-**See [depth-levels.md](../common/depth-levels.md) for adaptive depth explanation**
+**See [depth-levels.md](common-depth-levels.md) for adaptive depth explanation**
 
 For each stage that will execute:
 - All defined artifacts will be created

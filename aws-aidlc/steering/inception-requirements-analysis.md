@@ -4,7 +4,7 @@
 
 **Adaptive Phase**: Always executes. Detail level adapts to problem complexity.
 
-**See [depth-levels.md](../common/depth-levels.md) for adaptive depth explanation**
+**See [depth-levels.md](common-depth-levels.md) for adaptive depth explanation**
 
 ## Prerequisites
 - Workspace Detection must be complete

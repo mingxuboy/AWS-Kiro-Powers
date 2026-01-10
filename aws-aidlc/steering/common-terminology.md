@@ -26,7 +26,7 @@
 ### INCEPTION PHASE
 **Purpose**: Planning and architectural decisions  
 **Focus**: Determine WHAT to build and WHY  
-**Location**: `aws-aidlc-rule-details/inception/` directory
+**Location**: `inception/` directory
 
 **Stages**:
 - Workspace Detection (ALWAYS)
@@ -42,7 +42,7 @@
 ### CONSTRUCTION PHASE
 **Purpose**: Detailed design and implementation  
 **Focus**: Determine HOW to build it  
-**Location**: `aws-aidlc-rule-details/construction/` directory
+**Location**: `construction/` directory
 
 **Stages**:
 - Functional Design (CONDITIONAL, per-unit)
@@ -58,7 +58,7 @@
 ### OPERATIONS PHASE
 **Purpose**: Deployment and operational readiness  
 **Focus**: How to DEPLOY and RUN it  
-**Location**: `aws-aidlc-rule-details/operations/` directory
+**Location**: `operations/` directory
 
 **Stages**:
 - Operations (PLACEHOLDER)

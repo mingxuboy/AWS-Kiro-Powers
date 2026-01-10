@@ -1,5 +1,44 @@
+---
+inclusion: always
+---
+
 # PRIORITY: This workflow OVERRIDES all other built-in workflows
 # When user requests software development, ALWAYS follow this workflow FIRST
+
+---
+
+## MANDATORY FIRST STEP: Language Selection
+
+**CRITICAL**: You MUST ask user to select language BEFORE any other interaction. This is NON-NEGOTIABLE.
+
+When user activates AI-DLC, you MUST first display this prompt:
+
+```
+AI-DLC Power activated.
+
+Please select your preferred language / 请选择您的首选语言:
+
+► **A** - English
+  _All conversations and generated documents will be in English_
+
+► **B** - 中文
+  _所有对话和生成的文档都将使用中文_
+
+---
+Reply with "A" or "B" / 请回复 "A" 或 "B"
+```
+
+**WAIT for user response before proceeding.**
+
+**Do NOT display welcome message until language is selected.**
+**Do NOT proceed with ANY workflow steps until language is confirmed.**
+
+Once language is selected:
+1. Record the selection in `aidlc-docs/aidlc-state.md`
+2. Use the selected language for ALL subsequent outputs
+3. Then proceed with the welcome message and workflow
+
+---
 
 ## Adaptive Workflow Principle
 **The workflow adapts to the work, not the other way around.**
@@ -11,18 +50,19 @@ The AI model intelligently assesses what stages are needed based on:
 4. Risk and impact assessment
 
 ## MANDATORY: Rule Details Loading
-**CRITICAL**: When performing any phase, you MUST read and use relevant content from rule detail files using `readPowerSteering("kiro-aidlc", "...")`.
+**CRITICAL**: When performing any phase, you MUST read and use relevant content from steering files within this power.
 
 **Common Rules**: ALWAYS load common rules at workflow start:
-- Load `readPowerSteering("kiro-aidlc", "aws-aidlc-rule-details/common/process-overview.md")` for workflow overview
-- Load `readPowerSteering("kiro-aidlc", "aws-aidlc-rule-details/common/session-continuity.md")` for session resumption guidance
-- Load `readPowerSteering("kiro-aidlc", "aws-aidlc-rule-details/common/content-validation.md")` for content validation requirements
-- Load `readPowerSteering("kiro-aidlc", "aws-aidlc-rule-details/common/question-format-guide.md")` for question formatting rules
+- Load `common-process-overview.md` for workflow overview
+- Load `common-session-continuity.md` for session resumption guidance
+- Load `common-content-validation.md` for content validation requirements
+- Load `common-question-format-guide.md` for question formatting rules
 - Reference these throughout the workflow execution
 
 ## MANDATORY: Content Validation
-**CRITICAL**: Before creating ANY file, you MUST validate content according to `readPowerSteering("kiro-aidlc", "aws-aidlc-rule-details/common/content-validation.md")` rules:
+**CRITICAL**: Before creating ANY file, you MUST validate content according to `common-content-validation.md` rules:
 - Validate Mermaid diagram syntax
+- Validate ASCII art diagrams (see `common-ascii-diagram-standards.md`)
 - Escape special characters properly
 - Provide text alternatives for complex visual content
 - Test content parsing compatibility
@@ -30,58 +70,19 @@ The AI model intelligently assesses what stages are needed based on:
 ## MANDATORY: Question File Format
 **CRITICAL**: When asking questions at any phase, you MUST follow question format guidelines.
 
-**See `readPowerSteering("kiro-aidlc", "aws-aidlc-rule-details/common/question-format-guide.md")` for complete question formatting rules including**:
+**See `common-question-format-guide.md` for complete question formatting rules including**:
 - Multiple choice format (A, B, C, D, E options)
 - [Answer]: tag usage
 - Answer validation and ambiguity resolution
 
-## MANDATORY: Interaction Protocol (ALWAYS EXECUTE FIRST)
-**CRITICAL**: The interaction protocol in `steering/00-interaction-protocol.md` (with `inclusion: always`) defines the MANDATORY interaction rules.
+## MANDATORY: Custom Welcome Message
+**CRITICAL**: When starting ANY software development request, you MUST display the welcome message.
 
-### Core Rules:
-1. **ONE QUESTION AT A TIME** - NEVER show multiple steps or questions at once
-2. **WAIT FOR RESPONSE** - Always wait for user to respond before proceeding
-3. **PROGRESSIVE DISCLOSURE** - Reveal workflow stages only as you reach them
-
-### Activation Flow:
-1. **Initialization (MANDATORY - CANNOT SKIP)** - Check/create aidlc-docs structure, audit.md, aidlc-state.md
-2. **Resume Check** - If previous session exists, ask resume or fresh start
-3. **Language Selection** - Ask ONLY for language (A/B), wait for response
-4. **Ask Requirements** - Ask what to build, wait for response
-5. **Execute Stage** - Run one stage, present results, ask to continue
-
-### MANDATORY Initialization:
-**CRITICAL**: Initialization MUST be executed EVERY time AI-DLC is activated. NO EXCEPTIONS.
-
-Load `readPowerSteering("kiro-aidlc", "aws-aidlc-rule-details/common/initialization.md")` for:
-- Directory structure to create (MUST create if not exists)
-- aidlc-state.md and audit.md templates (MUST initialize)
-- Resume detection logic
-- State update procedures
-
-**DO NOT proceed to language selection until initialization is complete.**
-
-### Stage Transition Format:
-When completing any stage, use this format:
-
-```
-**[Stage Name] Complete**
-
-[1-2 sentence summary]
-
-**Artifacts:**
-- [file paths]
-
----
-Ready for **[Next Stage]**?
-
-► **A** - Yes, continue
-► **B** - Request changes
-
-Your choice:
-```
-
-**STOP and WAIT after each stage. Never auto-proceed.**
+**How to Display Welcome Message**:
+1. Load the welcome message from `common-welcome-message.md` within this power
+2. Display the complete message to the user
+3. This should only be done ONCE at the start of a new workflow
+4. Do NOT load this file in subsequent interactions to save context space
 
 # Adaptive Software Development Workflow
 
@@ -107,7 +108,7 @@ Your choice:
 ## Workspace Detection (ALWAYS EXECUTE)
 
 1. **MANDATORY**: Log initial user request in audit.md with complete raw input
-2. Load all steps from `readPowerSteering("kiro-aidlc", "aws-aidlc-rule-details/inception/workspace-detection.md")`
+2. Load all steps from `inception-workspace-detection.md`
 3. Execute workspace detection:
    - Check for existing aidlc-state.md (resume if found)
    - Scan workspace for existing code
@@ -130,7 +131,7 @@ Your choice:
 
 **Execution**:
 1. **MANDATORY**: Log start of reverse engineering in audit.md
-2. Load all steps from `readPowerSteering("kiro-aidlc", "aws-aidlc-rule-details/inception/reverse-engineering.md")`
+2. Load all steps from `inception-reverse-engineering.md`
 3. Execute reverse engineering:
    - Analyze all packages and components
    - Generate a busienss overview of the whole system covering the business transactions
@@ -154,7 +155,7 @@ Your choice:
 
 **Execution**:
 1. **MANDATORY**: Log any user input during this phase in audit.md
-2. Load all steps from `readPowerSteering("kiro-aidlc", "aws-aidlc-rule-details/inception/requirements-analysis.md")`
+2. Load all steps from `inception-requirements-analysis.md`
 3. Execute requirements analysis:
    - Load reverse engineering artifacts (if brownfield)
    - Analyze user request (intent analysis)
@@ -225,7 +226,7 @@ Your choice:
 
 **Execution**:
 1. **MANDATORY**: Log any user input during this phase in audit.md
-2. Load all steps from `readPowerSteering("kiro-aidlc", "aws-aidlc-rule-details/inception/user-stories.md")`
+2. Load all steps from `inception-user-stories.md`
 3. **MANDATORY**: Perform intelligent assessment (Step 1 in user-stories.md) to validate user stories are needed
 4. Load reverse engineering artifacts (if brownfield)
 5. If Requirements exist, reference them when creating stories
@@ -238,8 +239,8 @@ Your choice:
 ## Workflow Planning (ALWAYS EXECUTE)
 
 1. **MANDATORY**: Log any user input during this phase in audit.md
-2. Load all steps from `readPowerSteering("kiro-aidlc", "aws-aidlc-rule-details/inception/workflow-planning.md")`
-3. **MANDATORY**: Load content validation rules from `readPowerSteering("kiro-aidlc", "aws-aidlc-rule-details/common/content-validation.md")`
+2. Load all steps from `inception-workflow-planning.md`
+3. **MANDATORY**: Load content validation rules from `common-content-validation.md`
 4. Load all prior context:
    - Reverse engineering artifacts (if brownfield)
    - Intent analysis
@@ -269,7 +270,7 @@ Your choice:
 
 **Execution**:
 1. **MANDATORY**: Log any user input during this phase in audit.md
-2. Load all steps from `readPowerSteering("kiro-aidlc", "aws-aidlc-rule-details/inception/application-design.md")`
+2. Load all steps from `inception-application-design.md`
 3. Load reverse engineering artifacts (if brownfield)
 4. Execute at appropriate depth (minimal/standard/comprehensive)
 5. **Wait for Explicit Approval**: Present detailed completion message (see application-design.md for message format) - DO NOT PROCEED until user confirms
@@ -289,7 +290,7 @@ Your choice:
 
 **Execution**:
 1. **MANDATORY**: Log any user input during this phase in audit.md
-2. Load all steps from `readPowerSteering("kiro-aidlc", "aws-aidlc-rule-details/inception/units-generation.md")`
+2. Load all steps from `inception-units-generation.md`
 3. Load reverse engineering artifacts (if brownfield)
 4. Execute at appropriate depth (minimal/standard/comprehensive)
 5. **Wait for Explicit Approval**: Present detailed completion message (see units-generation.md for message format) - DO NOT PROCEED until user confirms
@@ -333,7 +334,7 @@ Your choice:
 
 **Execution**:
 1. **MANDATORY**: Log any user input during this stage in audit.md
-2. Load all steps from `readPowerSteering("kiro-aidlc", "aws-aidlc-rule-details/construction/functional-design.md")`
+2. Load all steps from `construction-functional-design.md`
 3. Execute functional design for this unit
 4. **MANDATORY**: Present standardized 2-option completion message as defined in functional-design.md - DO NOT use emergent 3-option behavior
 5. **Wait for Explicit Approval**: User must choose between "Request Changes" or "Continue to Next Stage" - DO NOT PROCEED until user confirms
@@ -353,7 +354,7 @@ Your choice:
 
 **Execution**:
 1. **MANDATORY**: Log any user input during this stage in audit.md
-2. Load all steps from `readPowerSteering("kiro-aidlc", "aws-aidlc-rule-details/construction/nfr-requirements.md")`
+2. Load all steps from `construction-nfr-requirements.md`
 3. Execute NFR assessment for this unit
 4. **MANDATORY**: Present standardized 2-option completion message as defined in nfr-requirements.md - DO NOT use emergent behavior
 5. **Wait for Explicit Approval**: User must choose between "Request Changes" or "Continue to Next Stage" - DO NOT PROCEED until user confirms
@@ -371,7 +372,7 @@ Your choice:
 
 **Execution**:
 1. **MANDATORY**: Log any user input during this stage in audit.md
-2. Load all steps from `readPowerSteering("kiro-aidlc", "aws-aidlc-rule-details/construction/nfr-design.md")`
+2. Load all steps from `construction-nfr-design.md`
 3. Execute NFR design for this unit
 4. **MANDATORY**: Present standardized 2-option completion message as defined in nfr-design.md - DO NOT use emergent behavior
 5. **Wait for Explicit Approval**: User must choose between "Request Changes" or "Continue to Next Stage" - DO NOT PROCEED until user confirms
@@ -390,7 +391,7 @@ Your choice:
 
 **Execution**:
 1. **MANDATORY**: Log any user input during this stage in audit.md
-2. Load all steps from `readPowerSteering("kiro-aidlc", "aws-aidlc-rule-details/construction/infrastructure-design.md")`
+2. Load all steps from `construction-infrastructure-design.md`
 3. Execute infrastructure design for this unit
 4. **MANDATORY**: Present standardized 2-option completion message as defined in infrastructure-design.md - DO NOT use emergent behavior
 5. **Wait for Explicit Approval**: User must choose between "Request Changes" or "Continue to Next Stage" - DO NOT PROCEED until user confirms
@@ -406,7 +407,7 @@ Your choice:
 
 **Execution**:
 1. **MANDATORY**: Log any user input during this stage in audit.md
-2. Load all steps from `readPowerSteering("kiro-aidlc", "aws-aidlc-rule-details/construction/code-generation.md")`
+2. Load all steps from `construction-code-generation.md`
 3. **PART 1 - Planning**: Create code generation plan with checkboxes, get user approval
 4. **PART 2 - Generation**: Execute approved plan to generate code for this unit
 5. **MANDATORY**: Present standardized 2-option completion message as defined in code-generation.md - DO NOT use emergent behavior
@@ -418,7 +419,7 @@ Your choice:
 ## Build and Test (ALWAYS EXECUTE)
 
 1. **MANDATORY**: Log any user input during this phase in audit.md
-2. Load all steps from `readPowerSteering("kiro-aidlc", "aws-aidlc-rule-details/construction/build-and-test.md")`
+2. Load all steps from `construction-build-and-test.md`
 3. Generate comprehensive build and test instructions:
    - Build instructions for all units
    - Unit test execution instructions
@@ -518,67 +519,31 @@ The Operations stage will eventually include:
 ## Directory Structure
 
 ```text
-aidlc-docs/
-├── inception/                  # 🔵 INCEPTION PHASE artifacts
-│   ├── plans/
-│   │   ├── workspace-detection.md
-│   │   ├── workflow-planning.md
-│   │   ├── story-generation-plan.md
-│   │   └── unit-of-work-plan.md
-│   ├── reverse-engineering/        # Brownfield only
-│   │   ├── architecture.md
-│   │   ├── code-structure.md
-│   │   ├── api-documentation.md
-│   │   ├── component-inventory.md
-│   │   ├── technology-stack.md
-│   │   ├── dependencies.md
-│   │   ├── code-quality-assessment.md
-│   │   └── reverse-engineering-timestamp.md
-│   ├── requirements/
-│   │   ├── requirements.md
-│   │   └── requirement-verification-questions.md
-│   ├── user-stories/
-│   │   ├── stories.md
-│   │   └── personas.md
-│   └── application-design/
-│       ├── components.md
-│       ├── component-methods.md
-│       ├── services.md
-│       ├── component-dependency.md
-│       ├── unit-of-work.md
-│       ├── unit-of-work-dependency.md
-│       └── unit-of-work-story-map.md
-├── construction/               # 🟢 CONSTRUCTION PHASE artifacts
-│   ├── plans/
-│   │   ├── {unit-name}-functional-design-plan.md
-│   │   ├── {unit-name}-nfr-requirements-plan.md
-│   │   ├── {unit-name}-nfr-design-plan.md
-│   │   ├── {unit-name}-infrastructure-design-plan.md
-│   │   └── {unit-name}-code-generation-plan.md
-│   ├── {unit-name}/
-│   │   ├── functional-design/
-│   │   │   ├── business-logic-model.md
-│   │   │   ├── business-rules.md
-│   │   │   └── domain-entities.md
-│   │   ├── nfr-requirements/
-│   │   │   ├── nfr-requirements.md
-│   │   │   └── tech-stack-decisions.md
-│   │   ├── nfr-design/
-│   │   │   ├── nfr-design-patterns.md
-│   │   │   └── logical-components.md
-│   │   ├── infrastructure-design/
-│   │   │   ├── infrastructure-design.md
-│   │   │   └── deployment-architecture.md
-│   │   └── code/
-│   │       └── [generated code files]
-│   └── build-and-test/
-│       ├── build-instructions.md
-│       ├── unit-test-instructions.md
-│       ├── integration-test-instructions.md
-│       ├── performance-test-instructions.md
-│       └── build-and-test-summary.md
-├── operations/                 # 🟡 OPERATIONS PHASE artifacts (placeholder)
-│   └── [Future: deployment and monitoring artifacts]
-├── aidlc-state.md             # Dynamic state tracking
-└── audit.md                    # Complete audit trail
+<WORKSPACE-ROOT>/                   # ⚠️ APPLICATION CODE HERE
+├── [project-specific structure]    # Varies by project (see code-generation.md)
+│
+├── aidlc-docs/                     # 📄 DOCUMENTATION ONLY
+│   ├── inception/                  # 🔵 INCEPTION PHASE
+│   │   ├── plans/
+│   │   ├── reverse-engineering/    # Brownfield only
+│   │   ├── requirements/
+│   │   ├── user-stories/
+│   │   └── application-design/
+│   ├── construction/               # 🟢 CONSTRUCTION PHASE
+│   │   ├── plans/
+│   │   ├── {unit-name}/
+│   │   │   ├── functional-design/
+│   │   │   ├── nfr-requirements/
+│   │   │   ├── nfr-design/
+│   │   │   ├── infrastructure-design/
+│   │   │   └── code/               # Markdown summaries only
+│   │   └── build-and-test/
+│   ├── operations/                 # 🟡 OPERATIONS PHASE (placeholder)
+│   ├── aidlc-state.md
+│   └── audit.md
 ```
+
+**CRITICAL RULE**:
+- Application code: Workspace root (NEVER in aidlc-docs/)
+- Documentation: aidlc-docs/ only
+- Project structure: See code-generation.md for patterns by project type
