@@ -96,7 +96,8 @@ When loading a phase, also load its dependencies:
 1. **Load Before Execute**: MUST load template + helper files BEFORE starting phase work
 2. **Write to File**: All phase outputs MUST be written to spec files, NOT just console output
 3. **Follow Template**: Output structure MUST follow loaded template format
-4. **Incremental Write**: Write content progressively as work completes, do NOT wait until end
+4. **Section by Section**: Generate content ONE section at a time, do NOT generate entire document at once
+5. **Incremental Write**: Write each section to file immediately after generation
 
 ### Cross-Phase Rules
 
