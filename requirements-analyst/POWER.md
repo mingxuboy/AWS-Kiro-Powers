@@ -59,9 +59,8 @@ ls -d .kiro/specs/*/ 2>/dev/null
 
 #### If Specs Exist:
 
-Display the following prompt (in selected language):
+Display the following prompt (use selected language):
 
-**English:**
 ```
 Found existing specs in .kiro/specs/:
 
@@ -73,37 +72,17 @@ Found existing specs in .kiro/specs/:
 
 **What would you like to do?**
 
-► **[1-N]** - Continue working on an existing spec (enter number)
-► **N** - Create a **N**ew spec
+> **[1-N]** - Continue working on an existing spec (enter number)
+> **N** - Create a **N**ew spec
 
 ---
 Reply with a number to select existing spec, or "N" to create new.
-```
-
-**中文:**
-```
-在 .kiro/specs/ 中发现已有规格:
-
-| # | 规格名称 | 最后修改 | 状态 |
-|---|----------|----------|------|
-| 1 | [folder-name-1] | [date] | [阶段状态] |
-| 2 | [folder-name-2] | [date] | [阶段状态] |
-| ... | ... | ... | ... |
-
-**请选择操作:**
-
-► **[1-N]** - 继续现有规格（输入数字）
-► **N** - 创建**新**规格
-
----
-请输入数字选择现有规格，或输入 "N" 创建新规格。
 ```
 
 #### If No Specs Exist:
 
 Display the following prompt:
 
-**English:**
 ```
 No existing specs found.
 
@@ -113,18 +92,6 @@ No existing specs found.
 
 ---
 Enter spec name (lowercase, use hyphens for spaces):
-```
-
-**中文:**
-```
-未发现已有规格。
-
-**请为新规格命名:**
-
-> 示例: "user-authentication", "payment-system", "dashboard-redesign"
-
----
-请输入规格名称（小写字母，用连字符代替空格）:
 ```
 
 ### Step 3: Handle User Response
@@ -149,40 +116,30 @@ Enter spec name (lowercase, use hyphens for spaces):
 
 ### Step 4: Confirm and Proceed
 
-Display confirmation:
+Display confirmation (use selected language):
 
-**English:**
 ```
-✓ Working spec: [spec-name]
-✓ Location: .kiro/specs/[spec-name]/
-✓ Current status: [Phase X completed / New spec]
+Working spec: [spec-name]
+Location: .kiro/specs/[spec-name]/
+Current status: [Phase X completed / New spec]
 
-**Ready to proceed.** Type a phase command or describe your requirements.
-```
-
-**中文:**
-```
-✓ 当前规格: [spec-name]
-✓ 位置: .kiro/specs/[spec-name]/
-✓ 当前状态: [阶段 X 已完成 / 新规格]
-
-**准备就绪。** 输入阶段命令或描述您的需求。
+Ready to proceed. Type a phase command or describe your requirements.
 ```
 
 ---
 
 ## Phase Trigger Commands
 
-Users can directly trigger any phase using the following commands (English or Chinese):
+Users can directly trigger any phase using the following commands:
 
-| Phase | English | 中文 | Description |
-|-------|---------|------|-------------|
-| Phase 1 | **Discover** | **发现** | Start requirements discovery |
-| Phase 2 | **Sort** | **排序** | Start value sorting |
-| Phase 3 | **Analyze** | **分析** | Start requirements analysis |
-| Phase 4 | **Clarify** | **澄清** | Start requirements clarification |
-| Phase 5 | **Validate** | **验证** | Start requirements validation |
-| Phase 6 | **Specify** | **规格化** | Start requirements specification |
+| Phase | Command | Description |
+|-------|---------|-------------|
+| Phase 1 | **Discover** | Start requirements discovery |
+| Phase 2 | **Sort** | Start value sorting |
+| Phase 3 | **Analyze** | Start requirements analysis |
+| Phase 4 | **Clarify** | Start requirements clarification |
+| Phase 5 | **Validate** | Start requirements validation |
+| Phase 6 | **Specify** | Start requirements specification |
 
 When user inputs any trigger command, load the corresponding steering file and begin that phase.
 
@@ -217,8 +174,8 @@ All detailed methodologies are in the `steering/` directory:
 
 **Deliverable Templates**:
 - `template-prd.md` - PRD document template
-- `template-openapi.yaml` - OpenAPI specification template
-- `template-bdd.feature` - BDD/Gherkin scenario template
+- `template-openapi.md` - OpenAPI specification template
+- `template-bdd.md` - BDD/Gherkin scenario template
 
 ---
 
@@ -235,7 +192,7 @@ All detailed methodologies are in the `steering/` directory:
 | `phase3-requirements-analysis.md` | `template-analysis.md` | `helper-diagram-standards.md` | - |
 | `phase4-requirements-clarification.md` | `template-clarification.md` | - | - |
 | `phase5-requirements-validation.md` | `template-validation.md` | `helper-multi-role-validation.md` | - |
-| `phase6-requirements-specification.md` | `template-specification.md` | - | `template-prd.md`, `template-openapi.yaml`, `template-bdd.feature` |
+| `phase6-requirements-specification.md` | `template-specification.md` | - | `template-prd.md`, `template-openapi.md`, `template-bdd.md` |
 
 ### Loading Rules
 

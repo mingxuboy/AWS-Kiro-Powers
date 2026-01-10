@@ -1,7 +1,13 @@
 # OpenAPI Specification Template
-# Purpose: API contract definition for development and documentation
-# Output File: .kiro/specs/[feature-name]/api.yaml or standalone API spec
 
+**Purpose**: API contract definition for development and documentation
+**Output File**: `.kiro/specs/[feature-name]/api.yaml`
+
+---
+
+## Template
+
+```yaml
 openapi: 3.0.0
 info:
   title: [API Name]
@@ -162,3 +168,27 @@ components:
 
 security:
   - bearerAuth: []
+```
+
+---
+
+## OpenAPI Structure Reference
+
+| Section | Content |
+|---------|---------|
+| `info` | API name, version, description, contact |
+| `servers` | Production and staging URLs |
+| `paths` | Endpoints with operations (GET, POST, PUT, DELETE) |
+| `components/schemas` | Data models and request/response objects |
+| `components/responses` | Reusable response definitions |
+| `components/securitySchemes` | Authentication methods |
+| `security` | Global security requirements |
+
+---
+
+## When to Use OpenAPI
+
+- API-first development
+- Microservices architecture
+- Third-party integrations
+- API documentation generation
