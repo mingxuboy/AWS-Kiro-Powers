@@ -17,15 +17,13 @@ inclusion: agent
 | Goal | Clarify ALL critical ambiguities (no fixed limit) |
 | Question Format | Multiple-choice (2-4 options) or Short phrase |
 | Delivery | ONE question at a time, wait for answer |
-| Output Files | `04-clarification.md` (log) + update `03-analysis.md` |
+| Output Files | `04-clarification.md` (log) + update Phase 3 outputs |
 
 ### ⚠️ CRITICAL: Update Files After EACH Answer
 
 **After user answers EACH question, you MUST IMMEDIATELY:**
 1. Write Q&A to `04-clarification.md`
-2. Check and update ALL affected Phase 3 outputs:
-   - `03-analysis.md` (user stories, use cases)
-   - `data-model.md` (entities, attributes, relationships)
+2. Check and update ALL affected Phase 3 outputs (see `POWER.md` → Output Structure)
 
 **DO NOT** ask next question until all affected files are updated.
 
@@ -295,13 +293,8 @@ Enter your answer (<=5 words), or "yes" to accept suggestion.
    - Append the Q&A record
    - Update the Summary table
 
-2. **Update ALL affected Phase 3 outputs**:
-   - `03-analysis.md`:
-     - Functional ambiguity → User Stories / Use Cases
-     - Non-functional → Feasibility Assessment
-     - Edge case → Alternative/Exception Flows
-   - `data-model.md`:
-     - Data model ambiguity → Entities / Attributes / Relationships
+2. **Update ALL affected Phase 3 outputs** (see `POWER.md` → Output Structure):
+   - Apply clarification to corresponding sections
    - **Remove** `[NEEDS CLARIFICATION]` markers with resolved content
    - **Add cross-reference** to clarification log
 
@@ -320,8 +313,7 @@ Stop asking questions when ANY of these apply:
 
 After EACH answer update, verify:
 - [ ] Q&A recorded in `04-clarification.md`
-- [ ] Affected sections in `03-analysis.md` updated (if applicable)
-- [ ] Affected sections in `data-model.md` updated (if applicable)
+- [ ] ALL affected Phase 3 outputs updated
 - [ ] `[NEEDS CLARIFICATION]` markers removed
 - [ ] No contradictory statements introduced
 - [ ] Terminology consistent across all files
