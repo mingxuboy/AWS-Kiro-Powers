@@ -16,8 +16,70 @@ inclusion: agent
 |--------|-------|--------|-------------|
 | User Story Mapping | User activities and priorities | Story map with MVP | All projects |
 | Use Case Analysis | Actor-system interactions | Use case documents | Complex interactions |
+| Success Criteria | Measurable outcomes | SMART criteria list | All requirements |
 | Event Storming | Domain events and commands | Domain model | Complex business logic |
-| DDD Strategic Design | Bounded contexts | Context map | Large-scale systems |
+| Dependency Analysis | Requirement relationships | Dependency graph | Multi-requirement projects |
+
+---
+
+## Output
+
+**File**: `.kiro/specs/[feature-name]/03-analysis.md`
+**Template**: See `template-analysis.md`
+
+---
+
+## MANDATORY: Diagram and Documentation Standards
+
+**CRITICAL**: You MUST load and follow `helper-diagram-standards.md` BEFORE creating any diagrams or documentation. This is NON-NEGOTIABLE.
+
+### Expression Priority (MUST FOLLOW)
+
+```
+1st Priority: Diagram (Visual representation)
+    └── 2nd Priority: UML Diagram (Standard notation)
+        └── 3rd Priority: Mermaid Syntax (Generation method)
+```
+
+**Rule**: ALWAYS prefer diagrams over text/tables. When using diagrams, ALWAYS prefer UML. When generating UML, ALWAYS use Mermaid syntax.
+
+| Expression Method | Priority | When to Use |
+|-------------------|----------|-------------|
+| **UML Diagram (Mermaid)** | 🥇 Highest | Default choice for all requirements |
+| **Other Diagrams (Mermaid)** | 🥈 Second | When UML is not applicable |
+| **Table + Diagram** | 🥉 Third | Supplementary details only |
+| **Text/Table only** | ❌ Avoid | Only when diagram is impossible |
+
+### Key Rules Summary
+
+1. **UML Use Case Diagram**:
+   - Actors: stick figure icon
+   - Use Cases: ellipse shape
+   - System Boundary: dashed rectangle
+   - Relationships: `<<include>>` and `<<extend>>` stereotypes
+   - ❌ PROHIBITED: Simple flowcharts instead of UML
+
+2. **Business Process (Activity Diagram)**:
+   - Core user flows MUST use UML Activity Diagram
+   - Tables alone are NOT sufficient
+   - Parallel processing MUST use fork/join or `par` syntax
+
+3. **Use Case Main Flow (Sequence Diagram)**:
+   - Main flows MUST use Sequence Diagram
+   - Include all participants: User, UI, System, Agent, Database
+   - Parallel execution MUST use `par` syntax
+   - ✅ ALWAYS accompany tables with Sequence Diagrams (tables alone are insufficient)
+
+4. **Document Format**:
+   - Each analysis item on separate line
+   - Key terms in **bold**
+   - Consistent indentation
+   - Clear visual hierarchy
+
+5. **Diagram Quality**:
+   - Use Mermaid syntax for all diagrams
+   - Apply color coding for element types
+   - Complex processes MUST be decomposed
 
 ---
 
@@ -25,11 +87,12 @@ inclusion: agent
 
 **MUST pass this check before starting**:
 
-- [ ] **Phase 2 completed?** All requirements classified and categorized?
-- [ ] **Inputs available?** Value sorting matrix and prioritization from Phase 2 ready?
-- [ ] **Unclear items identified?** Any requirements needing deeper clarification flagged?
+- [ ] **Phase 2 completed?** Verify `02-sort.md` exists with value sorting matrix
+- [ ] **Inputs available?** Confirm prioritization (MoSCoW/RICE) is complete
+- [ ] **Unclear items identified?** List requirements flagged for clarification
+- [ ] **Helper file loaded?** Load `helper-diagram-standards.md` for diagram rules
 
-**If ANY check fails**: STOP. NEVER proceed. Return to Phase 2.
+**If ANY check fails**: STOP. NEVER proceed. Return to Phase 2 or load required files.
 
 ---
 
@@ -37,8 +100,9 @@ inclusion: agent
 
 1. **User Story Mapping**: Create complete user story maps
 2. **Use Case Analysis**: Draw main use case diagrams and write use case documents
-3. **Dependency Analysis**: Map requirement dependencies and identify conflicts
-4. **Feasibility Assessment**: Evaluate technical feasibility and risks
+3. **Success Criteria Definition**: Define measurable success criteria for each requirement
+4. **Dependency Analysis**: Map requirement dependencies and identify conflicts
+5. **Feasibility Assessment**: Evaluate technical feasibility and risks
 
 ## Professional Qualities You MUST Demonstrate
 
@@ -57,6 +121,8 @@ inclusion: agent
 ---
 
 ## Method 1: User Story Mapping
+
+**OUTPUT TEMPLATE**: Use `template-user-story.md` for user story document output format.
 
 ### User Story Format
 
@@ -220,7 +286,106 @@ Each user story MUST be:
 
 ---
 
-## Method 3: Event Storming (for Complex Systems)
+## Method 3: Success Criteria Definition
+
+### Purpose
+
+Success Criteria define **measurable outcomes** that determine whether a requirement has been successfully implemented. They bridge the gap between user stories and acceptance tests.
+
+### SMART Criteria
+
+Each success criterion MUST be **SMART**:
+
+| Attribute | Description | Example |
+|-----------|-------------|---------|
+| **S**pecific | Clear and unambiguous | "Page loads in under 2 seconds" not "Page loads fast" |
+| **M**easurable | Quantifiable metric | "95% of users complete checkout" |
+| **A**chievable | Realistic given constraints | Consider technical limitations |
+| **R**elevant | Aligned with business goals | Ties to user value |
+| **T**ime-bound | Has defined timeframe | "Within first 30 days of launch" |
+
+### Success Criteria Categories
+
+| Category | Focus | Example Metrics |
+|----------|-------|-----------------|
+| **Functional** | Feature behavior | Task completion rate, error rate |
+| **Performance** | Speed and efficiency | Response time, throughput |
+| **Usability** | User experience | Task success rate, time-on-task |
+| **Business** | Business outcomes | Conversion rate, revenue impact |
+| **Quality** | System quality | Defect density, uptime |
+
+### Success Criteria Template
+
+```markdown
+## Success Criteria: [Requirement/Feature ID]
+
+### SC-001: [Criterion Name]
+
+| Field | Value |
+|-------|-------|
+| **Requirement** | REQ-XXX / US-XXX |
+| **Category** | Functional / Performance / Usability / Business / Quality |
+| **Metric** | [What to measure] |
+| **Target** | [Quantified goal] |
+| **Baseline** | [Current state, if applicable] |
+| **Measurement Method** | [How to measure] |
+| **Verification Point** | [When to verify] |
+
+**Definition of Success**:
+> [Clear statement of what success looks like]
+
+**Definition of Failure**:
+> [Clear statement of what constitutes failure]
+```
+
+### Success Criteria Traceability
+
+```mermaid
+graph LR
+    subgraph Requirements
+        REQ[REQ-001<br/>Requirement]
+        US[US-001<br/>User Story]
+    end
+
+    subgraph SuccessCriteria[Success Criteria]
+        SC1[SC-001<br/>Functional]
+        SC2[SC-002<br/>Performance]
+        SC3[SC-003<br/>Business]
+    end
+
+    subgraph Verification
+        TC[Test Cases]
+        KPI[KPIs]
+        MON[Monitoring]
+    end
+
+    REQ --> SC1
+    REQ --> SC2
+    US --> SC3
+    SC1 --> TC
+    SC2 --> MON
+    SC3 --> KPI
+
+    style REQ fill:#e1f5fe,stroke:#01579b
+    style US fill:#e1f5fe,stroke:#01579b
+    style SC1 fill:#e8f5e9,stroke:#1b5e20
+    style SC2 fill:#e8f5e9,stroke:#1b5e20
+    style SC3 fill:#e8f5e9,stroke:#1b5e20
+```
+
+### Example Success Criteria
+
+| SC ID | Requirement | Category | Metric | Target |
+|-------|-------------|----------|--------|--------|
+| SC-001 | US-001 Login | Functional | Login success rate | ≥ 99.5% |
+| SC-002 | US-001 Login | Performance | Login response time | < 1 second |
+| SC-003 | US-001 Login | Security | Failed login lockout | After 5 attempts |
+| SC-004 | US-002 Search | Usability | Search result relevance | ≥ 90% accuracy |
+| SC-005 | REQ-010 | Business | User retention | ≥ 80% after 30 days |
+
+---
+
+## Method 4: Event Storming (for Complex Systems)
 
 ### Event Storming Elements
 
@@ -273,7 +438,7 @@ Each user story MUST be:
 
 ---
 
-## Method 4: Dependency Analysis
+## Method 5: Dependency Analysis
 
 ### Dependency Types
 
@@ -321,8 +486,11 @@ REQ-001 → REQ-005 → REQ-008 → REQ-011 (blocks release)
 
 | Criteria | Standard | Verification | Status |
 |----------|----------|--------------|--------|
+| **Diagram Standards** | All diagrams follow UML/Mermaid standards | Check against `helper-diagram-standards.md` | [ ] |
+| **Expression Priority** | Diagrams used over tables/text | Verify no text-only requirements | [ ] |
 | User Story Map | Core user journeys mapped | Verify activity flow | [ ] |
-| Use Case Diagrams | Main use cases documented | Review interactions | [ ] |
+| Use Case Diagrams | Main use cases documented with Sequence Diagrams | Review interactions | [ ] |
+| **Success Criteria** | SMART criteria defined for key requirements | Verify measurability | [ ] |
 | Domain Model | Bounded contexts identified (if applicable) | Verify aggregates | [ ] |
 | Dependency Graph | Dependencies mapped | Check for circular | [ ] |
 | Feasibility Assessment | Technical risks evaluated | Risk assessment complete | [ ] |

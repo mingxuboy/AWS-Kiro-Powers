@@ -18,6 +18,29 @@ inclusion: agent
 | GWT Acceptance Criteria | Testability | Given-When-Then scenarios | ✅ Yes |
 | Prototype Testing | User validation | Test results, feedback | ✅ Yes (core functions) |
 | Traceability Matrix | Coverage tracking | Complete trace links | ✅ Yes |
+| **Multi-Role Validation** | Cross-perspective review | Multi-role validation report | ✅ Yes |
+
+---
+
+## Output
+
+**File**: `.kiro/specs/[feature-name]/05-validation.md`
+**Template**: See `template-validation.md`
+
+---
+
+## MANDATORY: Multi-Role Validation
+
+**CRITICAL**: Load `helper-multi-role-validation.md` for multi-role validation perspectives.
+
+Requirements MUST be validated from 5 role perspectives:
+- **Product Manager (PM)**: Business value, user need, strategic alignment
+- **Requirements Analyst (RA)**: Completeness, clarity, traceability
+- **Software Architect (SA)**: Technical feasibility, architecture impact, NFRs
+- **Software Engineer (SE)**: Implementation clarity, effort estimation, error handling
+- **Test Engineer (TE)**: Testability, acceptance criteria, test coverage
+
+See `helper-multi-role-validation.md` for detailed validation dimensions and checklists.
 
 ---
 

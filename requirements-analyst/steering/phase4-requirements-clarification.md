@@ -1,3 +1,7 @@
+---
+inclusion: agent
+---
+
 # Phase 4: Requirements Clarification
 
 ## Overview
@@ -8,6 +12,15 @@ Transform vague or ambiguous requirements into clear, unambiguous specifications
 - Clarify assumptions and constraints
 - Define clear boundaries and scope
 - Establish measurable acceptance criteria
+
+---
+
+## Output
+
+**File**: `.kiro/specs/[feature-name]/04-clarification.md`
+**Template**: See `template-clarification.md`
+
+---
 
 ## Clarification Process
 

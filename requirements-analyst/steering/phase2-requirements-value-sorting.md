@@ -23,6 +23,13 @@ inclusion: agent
 
 ---
 
+## Output
+
+**File**: `.kiro/specs/[feature-name]/02-sort.md`
+**Template**: See `template-sort.md`
+
+---
+
 ## Pre-Check (GATE CHECK)
 
 **MUST pass this check before starting**:

@@ -10,82 +10,79 @@ author: "Kiro User"
 
 A comprehensive requirements engineering power that guides you through the complete lifecycle of requirements management—from initial discovery to formal specification and baseline establishment.
 
-## Overview
+---
 
-This power embodies two professional roles working together:
+## MANDATORY FIRST STEP: Language Selection
 
-- **Product Manager**: Starting from user needs, define product direction and feature scope
-- **Requirements Analyst**: Transform product vision into detailed, executable requirement documents
+**CRITICAL**: You MUST ask user to select language BEFORE any other interaction. This is NON-NEGOTIABLE.
 
-## Methodology Overview
-
-Choose between complete 6-phase methodology or simplified 3-phase workflow based on your project needs.
-
-## Workflow Options
-
-### Complete Workflow (6 Phases)
-Comprehensive requirements engineering for complex projects:
-1. **Requirements Discovery** - Stakeholder interviews, personas, journey maps
-2. **Requirements Value Sorting** - MoSCoW, RICE scoring, business value prioritization
-3. **Requirements Analysis** - User stories, use cases, domain modeling
-4. **Requirements Clarification** - Systematic questioning to eliminate ambiguity
-5. **Requirements Validation** - Reviews, acceptance criteria, prototype testing
-6. **Requirements Specification** - PRD writing, BDD scenarios, baseline management
-
-### Simplified Workflow (3 Phases)
-Streamlined process for quick requirements work:
-1. **Requirements Understanding** - Capture and clarify what user wants
-2. **Requirements Clarification** - Ask questions to eliminate ambiguity
-3. **Requirements Validation** - Confirm understanding with acceptance criteria
-
-## Activation Response
-
-When this power is activated, respond with:
+When user activates this power, you MUST first display this prompt:
 
 ```
 Requirements Analyst Power activated.
 
-Please choose your workflow:
+Please select your preferred language / 请选择您的首选语言:
 
-**Option 1: Complete Workflow (6 phases)**
-- Best for: Complex projects, formal documentation needed
-- Includes: Discovery → Value Sorting → Analysis → Clarification → Validation → Specification
+► **A** - English
+  _All conversations and generated documents will be in English_
 
-**Option 2: Simplified Workflow (3 phases)**  
-- Best for: Quick requirements work, small features, rapid iteration
-- Includes: Understanding → Clarification → Validation
+► **B** - 中文
+  _所有对话和生成的文档都将使用中文_
 
-Which workflow would you prefer? Or simply describe your requirements and I'll recommend the best approach.
+---
+Reply with "A" or "B" / 请回复 "A" 或 "B"
 ```
 
-## Core Principles
+**WAIT for user response before proceeding.**
 
-### Product Manager Principles
-- **User Value First**: All decisions centered on user value
-- **MVP Mindset**: Define minimum viable product first, validate, then expand
-- **Data-Driven**: Priority decisions based on data and user feedback
-- **Clarification First**: When encountering ambiguity, clarify first, never assume
+**Do NOT proceed with ANY workflow steps until language is confirmed.**
 
-### Requirements Analyst Principles
-- **Completeness First**: Cover main flow, branch flows, and exception handling
-- **No Ambiguity**: Descriptions must have only one interpretation
-- **Verifiable**: Every requirement must have clear acceptance criteria (Given-When-Then)
-- **Clear Boundaries**: Mark boundary conditions, null handling, concurrent scenarios
+Once language is selected:
+1. Use the selected language for ALL subsequent outputs
+2. Load `steering/00-interaction-protocol.md` and follow the activation response
 
-## Interaction Rules
+---
 
-- **WAIT for user instructions** - Never automatically start requirements work
-- **CONFIRM role and phase** - Ask the user which phase they need
-- **Clarify scope first** - Understand project context before starting
-- **Ask before proceeding** - Never proceed to next phase without user agreement
+## Phase Trigger Commands
+
+Users can directly trigger any phase using the following commands (English or Chinese):
+
+| Phase | English | 中文 | Description |
+|-------|---------|------|-------------|
+| Phase 1 | **Discover** | **发现** | Start requirements discovery |
+| Phase 2 | **Sort** | **排序** | Start value sorting |
+| Phase 3 | **Analyze** | **分析** | Start requirements analysis |
+| Phase 4 | **Clarify** | **澄清** | Start requirements clarification |
+| Phase 5 | **Validate** | **验证** | Start requirements validation |
+| Phase 6 | **Specify** | **规格化** | Start requirements specification |
+
+When user inputs any trigger command, load the corresponding steering file and begin that phase.
+
+---
 
 ## Steering Files
 
-Detailed methodologies for each phase are available in the steering files:
-- `00-interaction-protocol.md` - Interaction guidelines (always loaded)
-- `phase1-requirements-discovery.md` - Discovery methods and templates
-- `phase2-requirements-value-sorting.md` - MoSCoW, RICE, business value prioritization
+All detailed methodologies are in the `steering/` directory:
+
+**Core Protocol**:
+- `00-interaction-protocol.md` - Interaction guidelines, workflow options, output directory structure
+
+**Phase Instructions**:
+- `phase1-requirements-discovery.md` - Discovery methods
+- `phase2-requirements-value-sorting.md` - MoSCoW, RICE, value prioritization
 - `phase3-requirements-analysis.md` - User stories, use cases, domain modeling
-- `phase4-requirements-clarification.md` - Systematic questioning and ambiguity elimination
-- `phase5-requirements-validation.md` - Review checklists, acceptance criteria
-- `phase6-requirements-specification.md` - PRD templates, BDD scenarios
+- `phase4-requirements-clarification.md` - Systematic questioning
+- `phase5-requirements-validation.md` - Review, acceptance criteria
+- `phase6-requirements-specification.md` - PRD, BDD scenarios
+
+**Helper Files**:
+- `helper-multi-role-validation.md` - Multi-role validation perspectives
+- `helper-diagram-standards.md` - UML diagram and documentation standards
+
+**Output Templates** (prefix: `template-`):
+- `template-discovery.md` - Discovery output template
+- `template-sort.md` - Value sorting output template
+- `template-analysis.md` - Analysis output template
+- `template-clarification.md` - Clarification output template
+- `template-validation.md` - Validation output template
+- `template-specification.md` - Specification output template

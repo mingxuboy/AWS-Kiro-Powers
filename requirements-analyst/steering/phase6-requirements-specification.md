@@ -25,6 +25,13 @@ inclusion: agent
 
 ---
 
+## Output
+
+**File**: `.kiro/specs/[feature-name]/06-specification.md`
+**Template**: See `template-specification.md`
+
+---
+
 ## Pre-Check (GATE CHECK)
 
 **MUST satisfy these conditions before starting**:

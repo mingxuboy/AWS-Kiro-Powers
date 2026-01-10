@@ -25,6 +25,13 @@ inclusion: agent
 
 ---
 
+## Output
+
+**File**: `.kiro/specs/[feature-name]/01-discovery.md`
+**Template**: See `template-discovery.md`
+
+---
+
 ## Pre-Check (GATE CHECK)
 
 **MUST satisfy these conditions before starting**:
