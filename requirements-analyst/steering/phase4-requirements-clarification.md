@@ -258,27 +258,25 @@ Enter your answer (<=5 words), or "yes" to accept suggestion.
 .kiro/specs/[feature-name]/04-clarification.md
 ```
 
-#### 4.2 Update Log After EACH Answer
+#### 4.2 Update After EACH Answer (IMMEDIATE)
 
-**After EACH question is answered, you MUST**:
+**CRITICAL**: After EACH question is answered, you MUST **IMMEDIATELY** perform ALL of the following before asking the next question:
 
-1. **Append the Q&A record** to `04-clarification.md` immediately
-2. **Update the Summary table** with the new entry
-3. **Save the file** before asking the next question
+1. **Record to clarification log** (`04-clarification.md`):
+   - Append the Q&A record
+   - Update the Summary table
 
-#### 4.3 Apply Clarification to Analysis Document
-
-After recording in `04-clarification.md`:
-
-1. **Update `03-analysis.md`** with clarified requirements:
+2. **Update analysis document** (`03-analysis.md`):
    - Functional ambiguity → User Stories / Use Cases
    - Data model → Domain Model section
    - Non-functional → Feasibility Assessment
    - Edge case → Alternative/Exception Flows
+   - **Remove** `[NEEDS CLARIFICATION]` markers with resolved content
+   - **Add cross-reference** to clarification log
 
-2. **Remove ambiguity markers**: Replace `[NEEDS CLARIFICATION]` with resolved content
+3. **Verify both files saved** before proceeding to next question
 
-3. **Add cross-reference** in both files
+**DO NOT batch updates. Each answer triggers immediate updates to BOTH files.**
 
 ### Step 5: Stop Conditions
 
@@ -287,13 +285,14 @@ Stop asking questions when ANY of these apply:
 - User signals completion ("done", "enough", "no more")
 - Remaining ambiguities are non-blocking (can defer to implementation)
 
-### Step 6: Validation
+### Step 6: Per-Answer Validation
 
-After each write, verify:
-- [ ] Clarification recorded with complete details
-- [ ] Analysis document updated
+After EACH answer update, verify:
+- [ ] Q&A recorded in `04-clarification.md`
+- [ ] Corresponding section in `03-analysis.md` updated
+- [ ] `[NEEDS CLARIFICATION]` marker removed
 - [ ] No contradictory statements introduced
-- [ ] Terminology consistent
+- [ ] Terminology consistent across both files
 
 ### Step 7: Completion Report
 
