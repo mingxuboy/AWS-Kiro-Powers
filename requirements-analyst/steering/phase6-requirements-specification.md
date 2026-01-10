@@ -159,437 +159,105 @@ Support these placeholder formats:
 
 ## Method 1: PRD Document
 
-### PRD Template
+**Template File**: `template-prd.md`
 
-```markdown
-# Product Requirements Document (PRD)
+### Purpose
 
-## Document Information
-| Field | Value |
-|-------|-------|
-| **Product Name** | [Name] |
-| **Version** | v1.0.0 |
-| **Creation Date** | [Date] |
-| **Last Updated** | [Date] |
-| **Owner** | [Name] |
-| **Status** | Draft / In Review / Approved |
+Create a complete Product Requirements Document that serves as the authoritative source for product definition.
 
----
+### PRD Structure Overview
 
-## 1. Executive Summary
-[2-3 paragraphs summarizing the product, its purpose, and key features]
+| Section | Content |
+|---------|---------|
+| Document Information | Version, owner, status |
+| Executive Summary | 2-3 paragraph overview |
+| Product Overview | Vision, objectives, target users, scope |
+| Functional Requirements | Features, user stories, acceptance criteria, business rules |
+| Non-Functional Requirements | Performance, security, reliability, usability |
+| User Experience | Flows, wireframes, navigation |
+| Technical Specifications | Architecture, integrations, data model |
+| Release Plan | MVP, versions, roadmap |
+| Dependencies and Risks | Dependencies, risk matrix |
+| Appendices | Glossary, references, version history |
+| Approvals | Stakeholder sign-off |
 
----
+### When to Use PRD
 
-## 2. Product Overview
-
-### 2.1 Product Vision
-[What is the long-term vision for this product?]
-
-### 2.2 Product Objectives
-| Objective | Success Metric | Target |
-|-----------|----------------|--------|
-| [Objective 1] | [Metric] | [Target Value] |
-| [Objective 2] | [Metric] | [Target Value] |
-
-### 2.3 Target Users
-| Persona | Description | Key Needs |
-|---------|-------------|-----------|
-| [Persona 1] | [Description] | [Needs] |
-| [Persona 2] | [Description] | [Needs] |
-
-### 2.4 Scope
-#### In Scope
-- [Feature/Capability 1]
-- [Feature/Capability 2]
-
-#### Out of Scope
-- [Excluded item 1]
-- [Excluded item 2]
-
----
-
-## 3. Functional Requirements
-
-### 3.1 Feature: [Feature Name]
-
-#### 3.1.1 Overview
-[Description of the feature]
-
-#### 3.1.2 User Stories
-| Story ID | User Story | Priority |
-|----------|------------|----------|
-| US-001 | As a [role], I want [feature] so that [benefit] | P0 |
-
-#### 3.1.3 Acceptance Criteria
-**US-001**:
-```gherkin
-Given [precondition]
-When [action]
-Then [expected result]
-```
-
-#### 3.1.4 Business Rules
-| Rule ID | Rule Description |
-|---------|------------------|
-| BR-001 | [Rule] |
-
-#### 3.1.5 Data Requirements
-| Field | Type | Required | Validation | Description |
-|-------|------|----------|------------|-------------|
-| [field] | [type] | Y/N | [rules] | [description] |
-
----
-
-## 4. Non-Functional Requirements
-
-### 4.1 Performance Requirements
-| Requirement | Metric | Target |
-|-------------|--------|--------|
-| Response Time | Page load | < 2 seconds |
-| Throughput | Concurrent users | 1,000 |
-| Capacity | Data records | 1 million |
-
-### 4.2 Security Requirements
-- [ ] Authentication: [Method]
-- [ ] Authorization: [Method]
-- [ ] Data encryption: [Standard]
-- [ ] Compliance: [Standards]
-
-### 4.3 Reliability Requirements
-| Requirement | Target |
-|-------------|--------|
-| Availability | 99.9% |
-| Recovery Time | < 1 hour |
-| Data Backup | Daily |
-
-### 4.4 Usability Requirements
-- [ ] Accessibility: [Standard, e.g., WCAG 2.1 AA]
-- [ ] Browser Support: [List]
-- [ ] Mobile Support: [Y/N, devices]
-- [ ] Internationalization: [Languages]
-
----
-
-## 5. User Experience
-
-### 5.1 User Flows
-[Include flow diagrams or descriptions]
-
-### 5.2 Wireframes/Mockups
-[Link to design files or embed images]
-
-### 5.3 Navigation Structure
-[Site map or navigation hierarchy]
-
----
-
-## 6. Technical Specifications
-
-### 6.1 System Architecture
-[High-level architecture diagram or description]
-
-### 6.2 Integration Requirements
-| System | Integration Type | Purpose |
-|--------|-----------------|---------|
-| [System] | API / Webhook / File | [Purpose] |
-
-### 6.3 Data Model
-[Entity relationship diagram or key data structures]
-
----
-
-## 7. Release Plan
-
-### 7.1 MVP (v1.0)
-**Target Date**: [Date]
-**Features**:
-- [Feature 1]
-- [Feature 2]
-
-### 7.2 Version 1.1
-**Target Date**: [Date]
-**Features**:
-- [Feature 3]
-- [Feature 4]
-
-### 7.3 Roadmap
-[Timeline visualization]
-
----
-
-## 8. Dependencies and Risks
-
-### 8.1 Dependencies
-| Dependency | Type | Owner | Status |
-|------------|------|-------|--------|
-| [Dependency] | Internal/External | [Team] | [Status] |
-
-### 8.2 Risks
-| Risk | Probability | Impact | Mitigation |
-|------|-------------|--------|------------|
-| [Risk] | H/M/L | H/M/L | [Strategy] |
-
----
-
-## 9. Appendices
-
-### 9.1 Glossary
-| Term | Definition |
-|------|------------|
-| [Term] | [Definition] |
-
-### 9.2 References
-- [Reference 1]
-- [Reference 2]
-
-### 9.3 Version History
-| Version | Date | Author | Changes |
-|---------|------|--------|---------|
-| 1.0.0 | [Date] | [Name] | Initial release |
-
----
-
-## Approvals
-
-| Role | Name | Signature | Date |
-|------|------|-----------|------|
-| Product Owner | | | |
-| Technical Lead | | | |
-| Business Stakeholder | | | |
-```
+- New product development
+- Major feature releases
+- Stakeholder alignment needed
+- Formal documentation required
 
 ---
 
 ## Method 2: API Specification (OpenAPI)
 
-### OpenAPI Template
+**Template File**: `template-openapi.yaml`
 
-```yaml
-openapi: 3.0.0
-info:
-  title: [API Name]
-  version: 1.0.0
-  description: |
-    [API description]
-  contact:
-    name: [Team Name]
-    email: [Email]
+### Purpose
 
-servers:
-  - url: https://api.example.com/v1
-    description: Production
-  - url: https://api-staging.example.com/v1
-    description: Staging
+Define API contracts using OpenAPI 3.0 specification for development and documentation.
 
-paths:
-  /users:
-    get:
-      summary: List users
-      description: Returns a list of users
-      operationId: listUsers
-      tags:
-        - Users
-      parameters:
-        - name: page
-          in: query
-          schema:
-            type: integer
-            default: 1
-        - name: limit
-          in: query
-          schema:
-            type: integer
-            default: 20
-            maximum: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/User'
-                  pagination:
-                    $ref: '#/components/schemas/Pagination'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '500':
-          $ref: '#/components/responses/InternalError'
+### OpenAPI Structure Overview
 
-    post:
-      summary: Create user
-      description: Creates a new user
-      operationId: createUser
-      tags:
-        - Users
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CreateUserRequest'
-      responses:
-        '201':
-          description: User created
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/User'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '409':
-          description: User already exists
+| Section | Content |
+|---------|---------|
+| `info` | API name, version, description, contact |
+| `servers` | Production and staging URLs |
+| `paths` | Endpoints with operations (GET, POST, PUT, DELETE) |
+| `components/schemas` | Data models and request/response objects |
+| `components/responses` | Reusable response definitions |
+| `components/securitySchemes` | Authentication methods |
+| `security` | Global security requirements |
 
-components:
-  schemas:
-    User:
-      type: object
-      required:
-        - id
-        - email
-      properties:
-        id:
-          type: string
-          format: uuid
-        email:
-          type: string
-          format: email
-        name:
-          type: string
-        createdAt:
-          type: string
-          format: date-time
+### When to Use OpenAPI
 
-    CreateUserRequest:
-      type: object
-      required:
-        - email
-        - password
-      properties:
-        email:
-          type: string
-          format: email
-        password:
-          type: string
-          minLength: 8
-        name:
-          type: string
-
-    Pagination:
-      type: object
-      properties:
-        page:
-          type: integer
-        limit:
-          type: integer
-        total:
-          type: integer
-
-  responses:
-    Unauthorized:
-      description: Authentication required
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    BadRequest:
-      description: Invalid request
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    InternalError:
-      description: Internal server error
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-
-  securitySchemes:
-    bearerAuth:
-      type: http
-      scheme: bearer
-      bearerFormat: JWT
-
-security:
-  - bearerAuth: []
-```
+- API-first development
+- Microservices architecture
+- Third-party integrations
+- API documentation generation
 
 ---
 
 ## Method 3: BDD Scenarios (Gherkin)
 
-### Feature File Template
+**Template File**: `template-bdd.feature`
 
-```gherkin
-# File: features/user_login.feature
+### Purpose
 
-@authentication @priority-high
-Feature: User Login
-  As a registered user
-  I want to log into the system
-  So that I can access my account and features
+Write executable test scenarios in Gherkin format for behavior-driven development.
 
-  Background:
-    Given the system is available
-    And the user database contains test users
+### BDD Structure Overview
 
-  @happy-path
-  Scenario: Successful login with valid credentials
-    Given a user exists with email "user@example.com" and password "SecurePass123"
-    And the user account is active and not locked
-    When the user navigates to the login page
-    And enters email "user@example.com"
-    And enters password "SecurePass123"
-    And clicks the "Login" button
-    Then the user should be redirected to the dashboard
-    And should see "Welcome back" message
-    And a session should be created
+| Element | Syntax | Purpose |
+|---------|--------|---------|
+| Feature | `Feature: [Name]` | Describe the feature being tested |
+| Background | `Background:` | Common preconditions for all scenarios |
+| Scenario | `Scenario: [Name]` | Single test case |
+| Scenario Outline | `Scenario Outline:` | Parameterized test with Examples |
+| Given | `Given [context]` | Preconditions |
+| When | `When [action]` | Action being tested |
+| Then | `Then [outcome]` | Expected result |
+| And/But | `And [additional]` | Additional steps |
+| Tags | `@tag` | Categorization (e.g., `@happy-path`, `@security`) |
 
-  @error-handling
-  Scenario: Login fails with invalid password
-    Given a user exists with email "user@example.com"
-    When the user attempts to login with email "user@example.com"
-    And enters incorrect password "WrongPassword"
-    Then the system should display "Invalid email or password"
-    And the user should remain on the login page
-    And no session should be created
+### Recommended Tags
 
-  @security
-  Scenario: Account lockout after multiple failed attempts
-    Given a user exists with email "user@example.com"
-    And the user has failed login 4 times
-    When the user attempts to login with incorrect password
-    Then the account should be locked for 15 minutes
-    And the system should display "Account locked. Try again in 15 minutes."
-    And a security notification should be sent to the user's email
+| Tag | Purpose |
+|-----|---------|
+| `@happy-path` | Main success scenarios |
+| `@error-handling` | Error and validation scenarios |
+| `@security` | Security-related scenarios |
+| `@edge-case` | Boundary and edge cases |
+| `@performance` | Performance requirements |
+| `@priority-high/medium/low` | Priority classification |
 
-  @security
-  Scenario Outline: Password validation rules
-    Given a user is on the registration page
-    When the user enters password "<password>"
-    Then the system should <result>
+### When to Use BDD
 
-    Examples:
-      | password      | result                                    |
-      | short         | display "Password must be at least 8 characters" |
-      | NoNumbers!    | display "Password must contain a number"  |
-      | nonumbers123  | display "Password must contain uppercase" |
-      | ValidPass123! | accept the password                       |
-
-  @edge-case
-  Scenario: Login attempt with locked account
-    Given a user exists with email "locked@example.com"
-    And the account is locked with 10 minutes remaining
-    When the user attempts to login with correct credentials
-    Then the system should display "Account locked. Try again in 10 minutes."
-    And should not create a session
-```
+- Test-driven development
+- Acceptance testing
+- Stakeholder communication
+- Living documentation
 
 ---
 
