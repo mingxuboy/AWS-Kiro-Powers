@@ -46,6 +46,101 @@ inclusion: agent
 
 ---
 
+## Custom Template Support (MUST ASK FIRST)
+
+**CRITICAL**: Before generating any specification documents, you MUST ask the user about custom templates.
+
+### Template Inquiry (MANDATORY)
+
+```markdown
+---
+## Specification Template Selection
+
+Before I generate the specification documents, I need to know your template preferences.
+
+**Do you want to use a custom specification template?**
+
+| Option | Description |
+|--------|-------------|
+| **A** | **Use Default Templates** - Use the built-in PRD, API, and BDD templates |
+| **B** | **Use Custom Template** - Provide your own specification template |
+| **C** | **Use Both** - Start with custom template, supplement with default sections |
+
+---
+Reply with **A**, **B**, or **C**.
+
+If you choose **B** or **C**, please provide:
+- Template file path (e.g., `/path/to/template.md`)
+- Or template name if stored in `.kiro/templates/` directory
+```
+
+### Custom Template Handling
+
+#### If User Chooses B or C:
+
+1. **Request Template Location**:
+```markdown
+Please provide the custom template:
+
+**Option 1**: File path
+> Example: `/Users/you/templates/prd-template.md`
+> Example: `./templates/my-spec-template.md`
+
+**Option 2**: Template name (if in `.kiro/templates/`)
+> Example: `company-prd` (will look for `.kiro/templates/company-prd.md`)
+
+**Option 3**: Paste template content directly
+> You can paste your template content here if it's short.
+```
+
+2. **Validate Template**:
+   - Check if file exists
+   - Read and parse template structure
+   - Identify placeholders (e.g., `[Product Name]`, `{{feature}}`, `$VARIABLE`)
+   - Report template structure to user
+
+3. **Apply Custom Template**:
+```markdown
+### Template Analysis
+
+I've analyzed your custom template. Here's what I found:
+
+| Aspect | Finding |
+|--------|---------|
+| **Template Path** | [Path] |
+| **Sections Found** | [List of sections] |
+| **Placeholders** | [List of variables to fill] |
+| **Compatible With** | PRD / API / BDD / Other |
+
+**Missing Sections** (compared to standard):
+- [Section 1] - Recommend adding for completeness
+- [Section 2] - Optional but valuable
+
+Shall I proceed with this template? (Yes/No)
+```
+
+### Template Storage Locations
+
+| Priority | Location | Description |
+|----------|----------|-------------|
+| 1 | User-provided path | Explicit file path from user |
+| 2 | `.kiro/templates/` | Project-specific templates |
+| 3 | `~/.kiro/templates/` | User-global templates |
+| 4 | Built-in templates | Default templates in this document |
+
+### Custom Template Placeholders
+
+Support these placeholder formats:
+
+| Format | Example | Description |
+|--------|---------|-------------|
+| `[Brackets]` | `[Product Name]` | Simple placeholder |
+| `{{Mustache}}` | `{{feature_name}}` | Mustache-style |
+| `$VARIABLE` | `$PRODUCT_NAME` | Shell-style |
+| `<%=ERB%>` | `<%=product.name%>` | ERB-style |
+
+---
+
 ## Your Tasks (NON-NEGOTIABLE)
 
 1. **PRD Document**: Write complete Product Requirements Document

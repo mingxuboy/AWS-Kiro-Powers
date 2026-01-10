@@ -20,6 +20,18 @@ inclusion: agent
 
 ---
 
+## Template Information
+
+| Field | Value |
+|-------|-------|
+| **Template Type** | Default / Custom / Hybrid |
+| **Template Source** | Built-in / [Custom template path] |
+| **Template Version** | [Version if custom] |
+
+> **Note**: If using custom template, the sections below may differ from the default structure.
+
+---
+
 ## Document Control
 
 | Version | Date | Author | Changes |
