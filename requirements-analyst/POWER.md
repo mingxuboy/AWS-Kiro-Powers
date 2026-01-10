@@ -39,7 +39,135 @@ Reply with "A" or "B" / 请回复 "A" 或 "B"
 
 Once language is selected:
 1. Use the selected language for ALL subsequent outputs
-2. Load `steering/00-interaction-protocol.md` and follow the activation response
+2. Proceed to Spec Selection (next section)
+
+---
+
+## MANDATORY SECOND STEP: Spec Selection
+
+**CRITICAL**: After language selection, you MUST check for existing specs and prompt user to select or create.
+
+### Step 1: Check for Existing Specs
+
+Check if `.kiro/specs/` directory exists and contains any spec folders:
+
+```bash
+ls -d .kiro/specs/*/ 2>/dev/null
+```
+
+### Step 2: Prompt Based on Results
+
+#### If Specs Exist:
+
+Display the following prompt (in selected language):
+
+**English:**
+```
+Found existing specs in .kiro/specs/:
+
+| # | Spec Name | Last Modified | Status |
+|---|-----------|---------------|--------|
+| 1 | [folder-name-1] | [date] | [phase status] |
+| 2 | [folder-name-2] | [date] | [phase status] |
+| ... | ... | ... | ... |
+
+**What would you like to do?**
+
+► **[1-N]** - Continue working on an existing spec (enter number)
+► **N** - Create a **N**ew spec
+
+---
+Reply with a number to select existing spec, or "N" to create new.
+```
+
+**中文:**
+```
+在 .kiro/specs/ 中发现已有规格:
+
+| # | 规格名称 | 最后修改 | 状态 |
+|---|----------|----------|------|
+| 1 | [folder-name-1] | [date] | [阶段状态] |
+| 2 | [folder-name-2] | [date] | [阶段状态] |
+| ... | ... | ... | ... |
+
+**请选择操作:**
+
+► **[1-N]** - 继续现有规格（输入数字）
+► **N** - 创建**新**规格
+
+---
+请输入数字选择现有规格，或输入 "N" 创建新规格。
+```
+
+#### If No Specs Exist:
+
+Display the following prompt:
+
+**English:**
+```
+No existing specs found.
+
+**Please provide a name for your new spec:**
+
+> Example: "user-authentication", "payment-system", "dashboard-redesign"
+
+---
+Enter spec name (lowercase, use hyphens for spaces):
+```
+
+**中文:**
+```
+未发现已有规格。
+
+**请为新规格命名:**
+
+> 示例: "user-authentication", "payment-system", "dashboard-redesign"
+
+---
+请输入规格名称（小写字母，用连字符代替空格）:
+```
+
+### Step 3: Handle User Response
+
+#### If User Selects Existing Spec:
+
+1. Set working spec to selected folder
+2. Detect current phase status by checking which files exist:
+   - `01-discovery.md` exists → Phase 1 completed
+   - `02-sort.md` exists → Phase 2 completed
+   - `03-analysis.md` exists → Phase 3 completed
+   - `04-clarification.md` exists → Phase 4 completed
+   - `05-validation.md` exists → Phase 5 completed
+   - `06-specification.md` exists → Phase 6 completed
+3. Suggest next phase or show phase menu
+
+#### If User Creates New Spec:
+
+1. Validate spec name (lowercase, alphanumeric, hyphens only)
+2. Create directory: `.kiro/specs/[spec-name]/`
+3. Confirm creation and proceed to Phase 1 (Discovery)
+
+### Step 4: Confirm and Proceed
+
+Display confirmation:
+
+**English:**
+```
+✓ Working spec: [spec-name]
+✓ Location: .kiro/specs/[spec-name]/
+✓ Current status: [Phase X completed / New spec]
+
+**Ready to proceed.** Type a phase command or describe your requirements.
+```
+
+**中文:**
+```
+✓ 当前规格: [spec-name]
+✓ 位置: .kiro/specs/[spec-name]/
+✓ 当前状态: [阶段 X 已完成 / 新规格]
+
+**准备就绪。** 输入阶段命令或描述您的需求。
+```
 
 ---
 
