@@ -275,9 +275,22 @@ After each write, verify:
 - **Clear**: Already sufficient in analysis
 - **Deferred**: Non-blocking, can resolve during implementation
 
+### Next Steps Available
+
+Based on the clarification results, you can choose one of the following:
+
+| Option | Command | When to Choose |
+|--------|---------|----------------|
+| **A** | **Clarify** (Continue) | Deferred items need resolution, or new ambiguities found |
+| **B** | **Analyze** (Re-analyze) | Significant changes require updating analysis document |
+| **C** | **Validate** (Proceed) | All critical ambiguities resolved, ready for validation |
+
 ### Recommendation
 
-[Recommend proceeding to Phase 5: Validate, or running Clarify again]
+[Based on coverage summary, recommend Option A/B/C with reason]
+
+---
+**Reply with A, B, or C to proceed, or describe what you'd like to do next.**
 ```
 
 ---
@@ -304,11 +317,55 @@ After each write, verify:
 
 ---
 
-## Next Step
+## Next Step (MUST PROMPT USER)
 
-After completing this phase, proceed to:
+**CRITICAL**: After EVERY clarification session, you MUST present the following options to the user:
 
-**Phase 5: Validation**
-- Multi-role validation (PM, RA, SA, SE, TE perspectives)
-- Requirements completeness check
-- Stakeholder sign-off
+```markdown
+---
+## Clarification Session Complete
+
+**What would you like to do next?**
+
+| Option | Action | Description |
+|--------|--------|-------------|
+| **A** | **Clarify** | Continue clarification - resolve deferred items or new ambiguities |
+| **B** | **Analyze** | Return to Analysis - update 03-analysis.md with clarification results |
+| **C** | **Validate** | Proceed to Validation - verify requirements through 5 dimensions |
+
+**Recommendation**: [Your recommendation based on session results]
+
+---
+Reply with **A**, **B**, or **C**, or describe what you'd like to do.
+```
+
+### When to Recommend Each Option
+
+| Recommend | Condition |
+|-----------|-----------|
+| **A (Clarify)** | >2 items deferred, or user mentioned new unclear areas |
+| **B (Analyze)** | Major scope changes, new user stories needed, or analysis outdated |
+| **C (Validate)** | All critical ambiguities resolved, coverage summary shows mostly "Resolved" or "Clear" |
+
+### Option Flows
+
+```mermaid
+stateDiagram-v2
+    [*] --> Clarify: Start
+
+    Clarify --> OptionPrompt: Session Complete
+
+    state OptionPrompt {
+        [*] --> ShowOptions
+        ShowOptions --> WaitUserChoice
+    }
+
+    OptionPrompt --> Clarify: User chooses A
+    OptionPrompt --> Analyze: User chooses B
+    OptionPrompt --> Validate: User chooses C
+
+    Analyze --> Clarify: May need more clarification
+    Validate --> [*]: Requirements validated
+
+    note right of OptionPrompt: MUST show options\nafter EVERY session
+```

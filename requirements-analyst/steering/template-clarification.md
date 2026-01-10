@@ -165,9 +165,22 @@ Items that were identified but deferred for later resolution:
 
 ---
 
-## Next Steps
+## Next Steps Available
 
-- [ ] Proceed to Phase 5: Validate (Multi-role validation)
-- [ ] OR Run Clarify again if deferred items need immediate resolution
-- [ ] Review updated 03-analysis.md before proceeding
+**What would you like to do next?**
+
+| Option | Action | When to Choose |
+|--------|--------|----------------|
+| **A** | **Clarify** (Continue) | Deferred items need resolution, or new ambiguities found |
+| **B** | **Analyze** (Re-analyze) | Significant changes require updating analysis document |
+| **C** | **Validate** (Proceed) | All critical ambiguities resolved, ready for validation |
+
+### Recommendation
+
+[Based on Coverage Summary above, recommend Option A/B/C]
+
+**Reason**: [Explain why this option is recommended]
+
+---
+**Reply with A, B, or C to proceed.**
 ```
