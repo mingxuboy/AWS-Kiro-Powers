@@ -538,262 +538,47 @@ stateDiagram-v2
 
 ---
 
-## Validation Report Template
+## Validation Report Output
 
-```markdown
-## Requirements Validation Report
+**Output File**: `.kiro/specs/[feature-name]/05-validation.md`
 
-**Project**: [Name]
-**Date**: YYYY-MM-DD
-**Validator**: [Name]
+**Template**: Use `template-validation.md` for the complete report structure.
 
----
+### Report Structure Overview
 
-### Executive Summary
+The validation report (defined in `template-validation.md`) includes:
 
-[2-3 sentences summarizing validation outcome]
+1. **Executive Summary** - Overall validation status
+2. **Dimension Summary Table** - Quick overview of all 5 dimensions
+3. **Validation Radar Chart** - Visual representation of scores (xychart-beta + ASCII progress bars)
+4. **Detailed Score Justification** - For each dimension:
+   - Score calculation formula
+   - Positive findings (why score is this high)
+   - Negative findings (why score is not higher)
+   - Verdict (2-3 sentence explanation)
+5. **Multi-Role Validation** - Sign-off matrix from 5 role perspectives
+6. **Traceability Matrix** - Requirements to test case mapping
+7. **Outstanding Issues** - Unresolved items with severity and owner
+8. **Sign-Off** - Stakeholder approvals
 
-**Overall Status**: ✅ Validated / ⚠️ Conditional / ❌ Failed
+### Score Justification Requirements
 
----
+**CRITICAL**: Every dimension score MUST include:
 
-### Dimension Summary
+| Requirement | Description |
+|-------------|-------------|
+| **Score Calculation** | Formula showing how percentage was derived |
+| **Positive Findings** | Evidence table explaining why score is this high |
+| **Negative Findings** | Issues table explaining why score is not higher |
+| **Verdict** | 2-3 sentences summarizing the score justification |
 
-| Dimension | Status | Score | Critical Issues |
-|-----------|--------|-------|-----------------|
-| Authenticity | ✅/⚠️/❌ | [%] | [Count] |
-| Completeness | ✅/⚠️/❌ | [%] | [Count] |
-| Consistency | ✅/⚠️/❌ | [%] | [Count] |
-| Feasibility | ✅/⚠️/❌ | [Rating] | [Count] |
-| Verifiability | ✅/⚠️/❌ | [%] | [Count] |
+### Radar Chart Requirements
 
----
-
-### Validation Radar Chart (五维验证雷达图)
-
-\`\`\`mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#e1f5fe'}}}%%
-xychart-beta
-    title "Requirements Validation Score"
-    x-axis ["Authenticity", "Completeness", "Consistency", "Feasibility", "Verifiability"]
-    y-axis "Score (%)" 0 --> 100
-    bar [85, 92, 95, 78, 88]
-    line [80, 80, 80, 80, 80]
-\`\`\`
-
-> **Note**: The line at 80% represents the minimum acceptable threshold. Dimensions below this line require attention.
-
-#### Score Visualization
-
-| Dimension | Score | Visual | Status |
-|-----------|-------|--------|--------|
-| **Authenticity** | [85]% | ████████░░ | ✅ Pass |
-| **Completeness** | [92]% | █████████░ | ✅ Pass |
-| **Consistency** | [95]% | █████████▌ | ✅ Pass |
-| **Feasibility** | [78]% | ███████▌░░ | ⚠️ At Risk |
-| **Verifiability** | [88]% | ████████▌░ | ✅ Pass |
-
-**Legend**:
-- ████████████ = 100% (Excellent)
-- ████████░░ = 80% (Acceptable threshold)
-- ██████░░░░ = 60% (Needs improvement)
-- ████░░░░░░ = 40% (Critical)
-
-#### Radar Analysis Summary
-
-| Metric | Value |
-|--------|-------|
-| **Average Score** | [87.6]% |
-| **Highest Dimension** | Consistency (95%) |
-| **Lowest Dimension** | Feasibility (78%) |
-| **Dimensions Above Threshold** | 4/5 |
-| **Overall Balance** | Good / Moderate / Poor |
-
-**Key Insight**: [1-2 sentences highlighting the most important observation from the radar chart. Example: "The validation shows strong specification quality (Consistency 95%, Completeness 92%) but Feasibility at 78% indicates schedule or resource constraints that need attention before proceeding."]
-
----
-
-### Detailed Score Justification (MANDATORY)
-
-**CRITICAL**: Every dimension score MUST include detailed justification explaining:
-1. **Why this score**: Specific evidence that led to this score
-2. **What was evaluated**: List of items checked
-3. **Key findings**: Both positive and negative findings
-4. **Score calculation**: How the percentage/rating was derived
-
----
-
-#### 1. Authenticity Score: [X]% - [Status]
-
-**Score Calculation**:
-- Total requirements evaluated: [N]
-- Requirements with verified origin: [N]
-- Requirements with stakeholder confirmation: [N]
-- **Formula**: (Verified + Confirmed) / (Total × 2) × 100 = [X]%
-
-**Positive Findings** (Why score is this high):
-| Req ID | Evidence Type | Source | Confidence |
-|--------|---------------|--------|------------|
-| REQ-001 | User interview | Interview #12, 2024-01-15 | High |
-| REQ-002 | Support ticket | Ticket #456, 50+ similar reports | High |
-| REQ-003 | Business case | Strategic Plan 2024, Section 3.2 | High |
-
-**Negative Findings** (Why score is not higher):
-| Req ID | Issue | Impact | Recommendation |
-|--------|-------|--------|----------------|
-| REQ-004 | No user evidence, assumption-based | May build unwanted feature | Conduct user validation |
-| REQ-005 | Competitor feature copy | May not fit our users | Validate with target users |
-
-**Authenticity Verdict**:
-> [2-3 sentences explaining why this score is appropriate, referencing specific evidence above]
-
----
-
-#### 2. Completeness Score: [X]% - [Status]
-
-**Score Calculation**:
-
-| Category | Total Items | Specified | Weight | Weighted Score |
-|----------|-------------|-----------|--------|----------------|
-| Functional | [N] | [N] | 30% | [%] |
-| Data | [N] | [N] | 20% | [%] |
-| Flows | [N] | [N] | 20% | [%] |
-| States | [N] | [N] | 10% | [%] |
-| Errors | [N] | [N] | 10% | [%] |
-| NFRs | [N] | [N] | 10% | [%] |
-| **Total** | | | 100% | **[X]%** |
-
-**Positive Findings** (Complete areas):
-- **Functional**: All [N] user stories have acceptance criteria
-- **Data**: All [N] entities have complete attribute definitions
-- **Flows**: Main success scenarios and [N] alternative flows documented
-
-**Negative Findings** (Gaps identified):
-| Gap ID | Category | Missing Item | Impact | Severity |
-|--------|----------|--------------|--------|----------|
-| GAP-001 | Error | Error handling for API timeout | Users see blank screen | Major |
-| GAP-002 | State | State transition from "Pending" to "Cancelled" | Orphan records | Medium |
-| GAP-003 | NFR | Specific latency target for search | Cannot verify performance | Medium |
-
-**Completeness Verdict**:
-> [2-3 sentences explaining the score, highlighting critical gaps and their impact]
-
----
-
-#### 3. Consistency Score: [X]% - [Status]
-
-**Score Calculation**:
-- Total consistency checks performed: [N]
-- Checks passed: [N]
-- Conflicts detected: [N]
-- Conflicts resolved: [N]
-- **Formula**: (Checks Passed + Resolved) / Total Checks × 100 = [X]%
-
-**Positive Findings** (Consistent areas):
-- **Terminology**: [N] terms consistently used across [N] documents
-- **Data types**: All [N] fields have consistent type definitions
-- **Business rules**: [N] rules with no contradictions
-
-**Negative Findings** (Inconsistencies found):
-| Conflict ID | Type | Req A | Req B | Description | Resolution Status |
-|-------------|------|-------|-------|-------------|-------------------|
-| CON-001 | Logic | REQ-001 | REQ-005 | REQ-001 says "auto-approve < $100", REQ-005 says "all orders need approval" | Resolved: REQ-005 updated |
-| CON-002 | Terminology | REQ-002 | REQ-008 | "Customer" vs "Client" used interchangeably | Resolved: Standardized to "Customer" |
-| CON-003 | Data | REQ-003 | REQ-010 | Email max length: 100 vs 255 chars | Pending |
-
-**Consistency Verdict**:
-> [2-3 sentences explaining the score, highlighting any unresolved conflicts and their risk]
-
----
-
-#### 4. Feasibility Score: [Rating] - [Status]
-
-**Score Calculation** (Composite Rating):
-
-| Sub-Dimension | Rating | Weight | Weighted Score | Key Factor |
-|---------------|--------|--------|----------------|------------|
-| Technical | High/Med/Low | 30% | [Score] | [Key factor] |
-| Economic | Viable/Marginal/Not | 25% | [Score] | ROI: [X]% |
-| Operational | High/Med/Low | 20% | [Score] | [Key factor] |
-| Schedule | Achievable/Risk/Not | 15% | [Score] | Gap: [N] days |
-| Compliance | Compliant/Gap/Non | 10% | [Score] | [Key factor] |
-| **Overall** | | 100% | **[Rating]** | |
-
-**Technical Feasibility Justification**:
-| Area | Assessment | Evidence |
-|------|------------|----------|
-| Technology Maturity | High | Using React 18, widely adopted, team experienced |
-| Team Capability | Medium | Need 1 additional ML engineer for recommendation feature |
-| Architecture Fit | High | Microservices pattern aligns with existing architecture |
-| Integration | Medium | Payment gateway API has known rate limiting issues |
-
-**Economic Feasibility Justification**:
-| Metric | Value | Benchmark | Assessment |
-|--------|-------|-----------|------------|
-| Development Cost | $150,000 | Budget: $200,000 | ✅ Within budget |
-| Annual Operational | $24,000 | Industry avg: $30,000 | ✅ Below average |
-| Expected Annual Benefit | $300,000 | Required: $100,000 | ✅ Exceeds threshold |
-| 3-Year ROI | 450% | Threshold: 100% | ✅ Strong ROI |
-| Payback Period | 8 months | Threshold: 18 months | ✅ Quick payback |
-
-**Operational/Schedule/Compliance Justification**:
-- **Operational**: Training needs identified (16 hours per support staff), support team can scale
-- **Schedule**: 2-week buffer exists before hard deadline, parallel workstreams reduce risk
-- **Compliance**: GDPR compliant, accessibility audit required before launch (GAP)
-
-**Feasibility Verdict**:
-> [2-3 sentences explaining the overall rating, highlighting blocking issues if any]
-
----
-
-#### 5. Verifiability Score: [X]% - [Status]
-
-**Score Calculation**:
-
-| Category | Total | Verifiable | Weight | Weighted Score |
-|----------|-------|------------|--------|----------------|
-| Quantified targets | [N] | [N] | 30% | [%] |
-| Test cases designed | [N] | [N] | 30% | [%] |
-| GWT criteria written | [N] | [N] | 25% | [%] |
-| Verification method assigned | [N] | [N] | 15% | [%] |
-| **Total** | | | 100% | **[X]%** |
-
-**Positive Findings** (Verifiable requirements):
-| Req ID | Verification Method | Test Cases | GWT Scenarios | Status |
-|--------|---------------------|------------|---------------|--------|
-| REQ-001 | Automated Test | TC-001~003 | 3 scenarios | ✅ Complete |
-| REQ-002 | Performance Test | PT-001 | 2 scenarios | ✅ Complete |
-| REQ-003 | Manual Demo | Demo-001 | 1 scenario | ✅ Complete |
-
-**Negative Findings** (Non-verifiable requirements):
-| Req ID | Issue | Why Not Verifiable | Recommendation |
-|--------|-------|-------------------|----------------|
-| REQ-004 | Vague target | "System should be fast" | Specify: "Response < 2s for 95th percentile" |
-| REQ-005 | No test design | Complex integration scenario | Design integration test with mock services |
-| REQ-006 | Subjective criteria | "User-friendly interface" | Define: Task completion rate > 90% |
-
-**Verifiability Verdict**:
-> [2-3 sentences explaining the score, highlighting requirements that need refinement]
-
----
-
-### Outstanding Issues
-
-| ID | Dimension | Severity | Description | Owner | Due |
-|----|-----------|----------|-------------|-------|-----|
-| V-001 | [Dim] | Critical | [Desc] | [Name] | [Date] |
-| V-002 | [Dim] | Major | [Desc] | [Name] | [Date] |
-
----
-
-### Sign-Off
-
-| Role | Name | Status | Date |
-|------|------|--------|------|
-| Product Owner | | Approved/Rejected | |
-| Technical Lead | | Approved/Rejected | |
-| QA Lead | | Approved/Rejected | |
-```
+The radar chart section MUST include:
+- Mermaid `xychart-beta` bar chart with 80% threshold line
+- ASCII progress bar visualization table
+- Analysis summary (average, highest, lowest, balance)
+- Key insight (1-2 sentences)
 
 ---
 
