@@ -28,7 +28,8 @@ inclusion: agent
 ## Output
 
 **File**: `.kiro/specs/[feature-name]/06-specification.md`
-**Template**: See `template-specification.md`
+
+> **Dependencies**: See `POWER.md` → File Dependencies for required template and helper files.
 
 ---
 
@@ -159,8 +160,6 @@ Support these placeholder formats:
 
 ## Method 1: PRD Document
 
-**Template File**: `template-prd.md`
-
 ### Purpose
 
 Create a complete Product Requirements Document that serves as the authoritative source for product definition.
@@ -192,8 +191,6 @@ Create a complete Product Requirements Document that serves as the authoritative
 
 ## Method 2: API Specification (OpenAPI)
 
-**Template File**: `template-openapi.yaml`
-
 ### Purpose
 
 Define API contracts using OpenAPI 3.0 specification for development and documentation.
@@ -220,8 +217,6 @@ Define API contracts using OpenAPI 3.0 specification for development and documen
 ---
 
 ## Method 3: BDD Scenarios (Gherkin)
-
-**Template File**: `template-bdd.feature`
 
 ### Purpose
 

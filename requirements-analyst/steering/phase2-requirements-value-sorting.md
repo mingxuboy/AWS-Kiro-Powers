@@ -26,7 +26,8 @@ inclusion: agent
 ## Output
 
 **File**: `.kiro/specs/[feature-name]/02-sort.md`
-**Template**: See `template-sort.md`
+
+> **Dependencies**: See `POWER.md` → File Dependencies for required template and helper files.
 
 ---
 

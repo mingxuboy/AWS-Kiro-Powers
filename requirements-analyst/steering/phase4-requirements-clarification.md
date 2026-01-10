@@ -24,7 +24,8 @@ inclusion: agent
 ## Output
 
 **File**: `.kiro/specs/[feature-name]/04-clarification.md`
-**Template**: See `template-clarification.md`
+
+> **Dependencies**: See `POWER.md` → File Dependencies for required template and helper files.
 
 ---
 

@@ -25,13 +25,14 @@ inclusion: agent
 ## Output
 
 **File**: `.kiro/specs/[feature-name]/03-analysis.md`
-**Template**: See `template-analysis.md`
+
+> **Dependencies**: See `POWER.md` → File Dependencies for required template and helper files.
 
 ---
 
 ## MANDATORY: Diagram and Documentation Standards
 
-**CRITICAL**: You MUST load and follow `helper-diagram-standards.md` BEFORE creating any diagrams or documentation. This is NON-NEGOTIABLE.
+**CRITICAL**: Follow `helper-diagram-standards.md` standards for all diagrams and documentation.
 
 ### Expression Priority (MUST FOLLOW)
 
@@ -90,9 +91,8 @@ inclusion: agent
 - [ ] **Phase 2 completed?** Verify `02-sort.md` exists with value sorting matrix
 - [ ] **Inputs available?** Confirm prioritization (MoSCoW/RICE) is complete
 - [ ] **Unclear items identified?** List requirements flagged for clarification
-- [ ] **Helper file loaded?** Load `helper-diagram-standards.md` for diagram rules
 
-**If ANY check fails**: STOP. NEVER proceed. Return to Phase 2 or load required files.
+**If ANY check fails**: STOP. NEVER proceed. Return to Phase 2.
 
 ---
 

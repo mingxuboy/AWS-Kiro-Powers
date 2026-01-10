@@ -86,3 +86,56 @@ All detailed methodologies are in the `steering/` directory:
 - `template-clarification.md` - Clarification output template
 - `template-validation.md` - Validation output template
 - `template-specification.md` - Specification output template
+
+**Deliverable Templates**:
+- `template-prd.md` - PRD document template
+- `template-openapi.yaml` - OpenAPI specification template
+- `template-bdd.feature` - BDD/Gherkin scenario template
+
+---
+
+## File Dependencies (CRITICAL)
+
+**When loading a phase file, you MUST also load its dependencies.**
+
+### Dependency Matrix
+
+| Phase File | Output Template | Helper Files | Deliverable Templates |
+|------------|-----------------|--------------|----------------------|
+| `phase1-requirements-discovery.md` | `template-discovery.md` | - | - |
+| `phase2-requirements-value-sorting.md` | `template-sort.md` | - | - |
+| `phase3-requirements-analysis.md` | `template-analysis.md` | `helper-diagram-standards.md` | - |
+| `phase4-requirements-clarification.md` | `template-clarification.md` | - | - |
+| `phase5-requirements-validation.md` | `template-validation.md` | `helper-multi-role-validation.md` | - |
+| `phase6-requirements-specification.md` | `template-specification.md` | - | `template-prd.md`, `template-openapi.yaml`, `template-bdd.feature` |
+
+### Loading Rules
+
+1. **When entering a phase**: Load phase file + all its dependencies from the matrix above
+2. **Output template**: Defines the structure of the phase output file (e.g., `03-analysis.md`)
+3. **Helper files**: Provide standards and guidelines that MUST be followed during execution
+4. **Deliverable templates**: Reference templates for creating standalone deliverables (PRD, API spec, BDD)
+
+### Cross-Phase References
+
+| Scenario | Required Files |
+|----------|----------------|
+| **Iterative Analysis** (Phase 3 after Phase 4/5) | Load existing `04-clarification.md` and/or `05-validation.md` if they exist |
+| **Re-validation** (Phase 5 after updates) | Load updated `03-analysis.md` |
+| **Custom Templates** (Phase 6) | Check `.kiro/templates/` and `~/.kiro/templates/` for user templates |
+
+### Output Directory Structure
+
+```
+.kiro/specs/[feature-name]/
+├── 01-discovery.md      ← Phase 1 output
+├── 02-sort.md           ← Phase 2 output
+├── 03-analysis.md       ← Phase 3 output
+├── 04-clarification.md  ← Phase 4 output
+├── 05-validation.md     ← Phase 5 output
+├── 06-specification.md  ← Phase 6 output (summary)
+├── prd.md               ← Phase 6 deliverable (PRD)
+├── api.yaml             ← Phase 6 deliverable (OpenAPI)
+└── features/            ← Phase 6 deliverable (BDD)
+    └── *.feature
+```

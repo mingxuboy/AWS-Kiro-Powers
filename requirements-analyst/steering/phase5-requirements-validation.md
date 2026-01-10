@@ -25,7 +25,8 @@ inclusion: agent
 ## Output
 
 **File**: `.kiro/specs/[feature-name]/05-validation.md`
-**Template**: See `template-validation.md`
+
+> **Dependencies**: See `POWER.md` → File Dependencies for required template and helper files.
 
 ---
 
@@ -60,9 +61,7 @@ graph TB
 
 ## MANDATORY: Multi-Role Validation
 
-**CRITICAL**: Load `helper-multi-role-validation.md` for multi-role validation perspectives.
-
-Requirements MUST be validated from 5 role perspectives:
+Requirements MUST be validated from 5 role perspectives (see `helper-multi-role-validation.md`):
 - **Product Manager (PM)**: Business value, user need, strategic alignment
 - **Requirements Analyst (RA)**: Completeness, clarity, traceability
 - **Software Architect (SA)**: Technical feasibility, architecture impact, NFRs
@@ -540,13 +539,9 @@ stateDiagram-v2
 
 ## Validation Report Output
 
-**Output File**: `.kiro/specs/[feature-name]/05-validation.md`
-
-**Template**: Use `template-validation.md` for the complete report structure.
-
 ### Report Structure Overview
 
-The validation report (defined in `template-validation.md`) includes:
+The validation report includes:
 
 1. **Executive Summary** - Overall validation status
 2. **Dimension Summary Table** - Quick overview of all 5 dimensions
