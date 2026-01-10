@@ -42,16 +42,15 @@ inclusion: agent
 
 ---
 
-## 1.1 Validation Score Chart
+## 1.1 Validation Radar Chart
 
 \`\`\`mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#e1f5fe'}}}%%
-xychart-beta
+%%{init: {'radar': {'max': 100, 'graticule': 'polygon', 'ticks': 5}}}%%
+radar-beta
     title "Requirements Validation Score"
-    x-axis ["Authenticity", "Completeness", "Consistency", "Feasibility", "Verifiability"]
-    y-axis "Score (%)" 0 --> 100
-    bar [85, 92, 95, 78, 88]
-    line [80, 80, 80, 80, 80]
+    axis auth["Authenticity"], comp["Completeness"], cons["Consistency"], feas["Feasibility"], veri["Verifiability"]
+    curve score["Score"]{auth: 85, comp: 92, cons: 95, feas: 78, veri: 88}
+    curve threshold["Threshold (80%)"]{auth: 80, comp: 80, cons: 80, feas: 80, veri: 80}
 \`\`\`
 
 > **Note**: 80% threshold line represents minimum acceptable score. Dimensions below require attention.
