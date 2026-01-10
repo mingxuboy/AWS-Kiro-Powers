@@ -410,6 +410,34 @@ Ensure every requirement can be **objectively verified** through testing, measur
 | **Testable** | Can create test case | Clear pass/fail criteria |
 | **Demonstrable** | Can show to stakeholder | Working prototype possible |
 
+### 5.1 Vague Terms Check (MANDATORY)
+
+**Scan ALL requirements** for ambiguous terms that prevent objective verification.
+
+| Category | Vague Terms to Detect | Quantified Alternative |
+|----------|----------------------|------------------------|
+| **Performance** | fast, quick, responsive, efficient | "< 2s response time", "95th percentile < 500ms" |
+| **Usability** | user-friendly, easy, intuitive, simple | "Task completion rate > 90%", "< 3 clicks" |
+| **Quality** | reliable, stable, robust, secure, safe | "99.9% uptime", "OWASP Top 10 compliant" |
+| **Flexibility** | flexible, configurable, extensible | "Supports N configuration options" |
+| **Scale** | scalable, many, few, large, small | "10,000 concurrent users", "1TB storage" |
+
+**Action Required**: For each vague term found, provide quantified replacement recommendation.
+
+### 5.2 Non-Quantified Standards Check (MANDATORY)
+
+**Scan ALL requirements** for standards lacking measurable metrics.
+
+| Standard Type | Non-Quantified Example | Quantified Example |
+|---------------|------------------------|-------------------|
+| **Time** | "fast loading", "quick response" | "Page load < 3s on 4G", "API response < 200ms" |
+| **Capacity** | "support many users", "handle large data" | "10,000 concurrent users", "100GB dataset" |
+| **Availability** | "high availability", "always available" | "99.9% uptime", "RTO < 1 hour" |
+| **Quality** | "low error rate", "high accuracy" | "Error rate < 0.1%", "Accuracy > 95%" |
+| **Performance** | "good throughput", "low latency" | "1000 TPS", "P99 latency < 100ms" |
+
+**Action Required**: For each non-quantified standard, specify measurable metric with threshold.
+
 ### Verifiability Checklist
 
 ```markdown

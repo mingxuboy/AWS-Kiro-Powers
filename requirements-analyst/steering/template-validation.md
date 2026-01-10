@@ -298,11 +298,61 @@ radar-beta
 
 | Category | Total | Verifiable | Weight | Weighted Score |
 |----------|-------|------------|--------|----------------|
-| Quantified targets | [N] | [N] | 30% | [%] |
-| Test cases designed | [N] | [N] | 30% | [%] |
-| GWT criteria written | [N] | [N] | 25% | [%] |
-| Verification method assigned | [N] | [N] | 15% | [%] |
+| Quantified targets | [N] | [N] | 25% | [%] |
+| No vague terms | [N] | [N] | 20% | [%] |
+| Test cases designed | [N] | [N] | 25% | [%] |
+| GWT criteria written | [N] | [N] | 20% | [%] |
+| Verification method assigned | [N] | [N] | 10% | [%] |
 | **Total** | | | 100% | **[X]%** |
+
+---
+
+### 6.1 Vague Terms Check
+
+Scan all requirements for ambiguous/vague terms that prevent objective verification.
+
+| Vague Term | Found In | Count | Replacement Recommendation |
+|------------|----------|-------|---------------------------|
+| "fast" | REQ-004, REQ-012 | 2 | "Response time < 2s" |
+| "user-friendly" | REQ-006 | 1 | "Task completion rate > 90%" |
+| "secure" | REQ-008 | 1 | "OWASP Top 10 compliant" |
+| "flexible" | REQ-015 | 1 | "Supports 3 configuration options" |
+| "easy to use" | REQ-018 | 1 | "Complete task in < 3 clicks" |
+| "high performance" | REQ-021 | 1 | "Handle 1000 concurrent users" |
+| "reliable" | - | 0 | - |
+| "scalable" | - | 0 | - |
+
+**Common Vague Terms to Scan**:
+- Performance: fast, quick, responsive, efficient, high-performance
+- Usability: user-friendly, easy, intuitive, simple, convenient
+- Quality: reliable, stable, robust, secure, safe
+- Flexibility: flexible, configurable, customizable, extensible
+- Scale: scalable, many, few, large, small
+
+**Vague Terms Summary**: [N] vague terms found in [M] requirements
+
+---
+
+### 6.2 Non-Quantified Standards Check
+
+Identify standards and criteria that lack measurable metrics.
+
+| Req ID | Non-Quantified Statement | Issue | Quantified Recommendation |
+|--------|--------------------------|-------|--------------------------|
+| REQ-004 | "System should respond quickly" | No time metric | "Response time < 500ms for 95th percentile" |
+| REQ-009 | "Support many users" | No number | "Support 10,000 concurrent users" |
+| REQ-011 | "High availability" | No percentage | "99.9% uptime (< 8.76 hours downtime/year)" |
+| REQ-014 | "Low error rate" | No threshold | "Error rate < 0.1%" |
+| REQ-017 | "Fast loading" | No time metric | "Page load < 3s on 4G network" |
+
+**Standards Requiring Quantification**:
+- Time: response time, loading time, processing time, timeout
+- Capacity: concurrent users, transactions per second, storage size
+- Availability: uptime percentage, recovery time, failover time
+- Quality: error rate, success rate, accuracy rate
+- Performance: throughput, latency, bandwidth
+
+**Non-Quantified Summary**: [N] standards lack metrics in [M] requirements
 
 ---
 
