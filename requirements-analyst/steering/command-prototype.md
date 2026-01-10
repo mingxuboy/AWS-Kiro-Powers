@@ -46,18 +46,28 @@ inclusion: agent
 
 ---
 
-## Output Structure
+## Output Structure (STRICT)
 
 ```
 .kiro/specs/[spec-name]/prototype/
-├── index.html          # Landing/navigation page
+├── index.html          # ONLY index.html in root
 ├── css/
 │   └── style.css       # Shared styles
 └── pages/
-    ├── [flow-1].html   # One HTML per user flow
+    ├── [flow-1].html   # ALL other HTML files MUST be here
     ├── [flow-2].html
     └── ...
 ```
+
+### Directory Rules (MANDATORY)
+
+| Rule | Description |
+|------|-------------|
+| **index.html** | ONLY file in prototype root (besides css/) |
+| **pages/** | ALL other HTML files MUST go here |
+| **css/** | All CSS files here |
+
+**FORBIDDEN**: Creating HTML files outside `pages/` (except index.html)
 
 ---
 
