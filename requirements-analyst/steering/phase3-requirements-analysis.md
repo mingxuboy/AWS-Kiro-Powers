@@ -638,7 +638,9 @@ graph LR
 
 ```mermaid
 graph LR
-    CP1[REQ-001] --> CP2[REQ-005] --> CP3[REQ-008] --> CP4[REQ-011]
+    CP1[REQ-001<br/>User Registration] --> CP2[REQ-005<br/>Profile Setup]
+    CP2 --> CP3[REQ-008<br/>Data Validation]
+    CP3 --> CP4[REQ-011<br/>Account Activation]
 
     style CP1 fill:#ffebee,stroke:#b71c1c
     style CP2 fill:#ffebee,stroke:#b71c1c
@@ -646,7 +648,15 @@ graph LR
     style CP4 fill:#ffebee,stroke:#b71c1c
 ```
 
-**Critical Path**: REQ-001 → REQ-005 → REQ-008 → REQ-011 (blocks release)
+| Step | Req ID | Requirement | Depends On | Impact |
+|------|--------|-------------|------------|--------|
+| 1 | REQ-001 | User Registration | - | Entry point |
+| 2 | REQ-005 | Profile Setup | REQ-001 | Core flow |
+| 3 | REQ-008 | Data Validation | REQ-005 | Quality gate |
+| 4 | REQ-011 | Account Activation | REQ-008 | **Blocks release** |
+
+**Path Summary**: 4 sequential dependencies, blocks release
+**Bottleneck**: REQ-008 (Data Validation) - highest complexity
 
 ### Risks Identified
 | Risk | Requirements | Mitigation |

@@ -328,7 +328,15 @@ graph TD
 
 ### Critical Path
 
-**Path**: REQ-001 → REQ-002 → REQ-004
+| Step | Req ID | Requirement | Depends On | Risk |
+|------|--------|-------------|------------|------|
+| 1 | REQ-001 | [Requirement name/description] | - | Entry point |
+| 2 | REQ-002 | [Requirement name/description] | REQ-001 | [Risk note] |
+| 3 | REQ-004 | [Requirement name/description] | REQ-002, REQ-003 | Blocks release |
+
+**Path Summary**: `REQ-001` → `REQ-002` → `REQ-004`
+**Total Dependencies**: 3 requirements in sequence
+**Bottleneck**: [Identify the highest-risk requirement in the path]
 
 ---
 
