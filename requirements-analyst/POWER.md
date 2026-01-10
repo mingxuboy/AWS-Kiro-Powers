@@ -22,7 +22,11 @@ author: "Kiro User"
 
 Ask user: **A** (English) or **B** (中文). **Wait for response. Do NOT proceed until confirmed.** Use selected language for ALL subsequent outputs.
 
-### 2. Spec Selection (Second)
+### 2. Load Core Protocol
+
+After language confirmed, load `steering/00-interaction-protocol.md`.
+
+### 3. Spec Selection
 
 1. Check `.kiro/specs/` for existing spec folders
 2. If exists: List specs with phase status, let user select or create new
