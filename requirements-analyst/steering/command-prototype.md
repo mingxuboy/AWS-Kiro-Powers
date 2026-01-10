@@ -17,6 +17,21 @@ inclusion: agent
 | Style | Clean, minimal CSS (no frameworks) |
 | Generation | ONE page at a time |
 
+### STRICT: Pure Static Files Only
+
+**MUST**:
+- Pure HTML + CSS only
+- Open `index.html` directly in browser (file:// protocol)
+- All links use relative paths
+- Inline or local CSS (no CDN)
+
+**FORBIDDEN**:
+- JavaScript (no .js files)
+- External CDN/dependencies
+- Server-side technology
+- Build tools (npm, webpack, etc.)
+- CSS frameworks (Bootstrap, Tailwind, etc.)
+
 ---
 
 ## Pre-Check
