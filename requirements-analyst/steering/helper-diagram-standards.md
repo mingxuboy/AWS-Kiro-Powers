@@ -34,9 +34,12 @@ This document defines the mandatory standards for UML diagrams and documentation
 | System interactions | Use Case Diagram | `graph TB` with actors |
 | **Process flow** | **Activity Diagram** | **`stateDiagram-v2`** |
 | Time-based interactions | Sequence Diagram | `sequenceDiagram` |
-| Object relationships | Class Diagram | `classDiagram` |
+| **Domain model** | **Class Diagram** | **`classDiagram`** |
+| **Data model** | **ER Diagram** | **`erDiagram`** |
 | State transitions | State Diagram | `stateDiagram-v2` |
 | Component structure | Component Diagram | `graph TB` with subgraphs |
+
+> ⚠️ **Class Diagram vs ER Diagram**: Do NOT mix their syntax! See sections 4 and 5 for correct usage.
 
 ### Non-UML Diagram Guide
 
@@ -223,7 +226,167 @@ sequenceDiagram
 
 ---
 
-## 4. Document Format Standards
+## 4. Class Diagram Standards (Domain Model)
+
+### When to Use
+
+- **Domain modeling**: Core business entities and relationships
+- **Data structure design**: Object attributes and methods
+- **Inheritance hierarchies**: Class specialization
+
+### MANDATORY Rules
+
+- Use `classDiagram` syntax for object relationships
+- Define attributes with visibility (`+` public, `-` private, `#` protected)
+- Use correct relationship notation
+
+### Class Diagram Syntax
+
+```mermaid
+classDiagram
+    class ResourceNode {
+        +String id
+        +String name
+        +ResourceType type
+        +getStatus() Status
+    }
+
+    class ResourceType {
+        +String typeName
+        +String description
+    }
+
+    class Agent {
+        +String agentId
+        +String version
+        +Status status
+        +start() void
+        +stop() void
+    }
+
+    ResourceNode "1" -- "1" ResourceType : has
+    ResourceNode "1" -- "0..*" Agent : monitors
+    Agent <|-- MonitorAgent : extends
+    Agent <|-- CollectorAgent : extends
+```
+
+### Relationship Syntax Reference
+
+| Relationship | Syntax | Description |
+|--------------|--------|-------------|
+| Association | `A -- B` | Basic relationship |
+| Association (labeled) | `A "1" -- "0..*" B : has` | With cardinality and label |
+| Inheritance | `Parent <\|-- Child` | Generalization |
+| Composition | `A *-- B` | Strong ownership (lifecycle bound) |
+| Aggregation | `A o-- B` | Weak ownership (independent lifecycle) |
+| Dependency | `A ..> B` | Uses relationship |
+| Realization | `A ..\|> B` | Interface implementation |
+
+### ⚠️ COMMON MISTAKE
+
+```
+❌ WRONG (ER Diagram syntax in Class Diagram):
+classDiagram
+    ResourceNode ||--|| ResourceType
+
+✅ CORRECT (Class Diagram syntax):
+classDiagram
+    ResourceNode "1" -- "1" ResourceType : has
+```
+
+---
+
+## 5. ER Diagram Standards (Data Model)
+
+### When to Use
+
+- **Database design**: Entity relationships for persistence
+- **Data modeling**: Tables and foreign key relationships
+- **System integration**: Data exchange structures
+
+### MANDATORY Rules
+
+- Use `erDiagram` syntax for entity relationships
+- Define attributes with data types
+- Use correct cardinality notation
+
+### ER Diagram Syntax
+
+```mermaid
+erDiagram
+    RESOURCE_NODE ||--|| RESOURCE_TYPE : has
+    RESOURCE_NODE ||--o{ AGENT : monitors
+    AGENT ||--o{ METRIC : collects
+
+    RESOURCE_NODE {
+        string id PK
+        string name
+        string type_id FK
+        datetime created_at
+    }
+
+    RESOURCE_TYPE {
+        string id PK
+        string type_name
+        string description
+    }
+
+    AGENT {
+        string id PK
+        string resource_id FK
+        string version
+        string status
+    }
+
+    METRIC {
+        string id PK
+        string agent_id FK
+        string metric_name
+        float value
+        datetime timestamp
+    }
+```
+
+### Cardinality Notation
+
+| Syntax | Meaning |
+|--------|---------|
+| `\|\|--\|\|` | One to One |
+| `\|\|--o{` | One to Many |
+| `o{--o{` | Many to Many |
+| `\|\|--o\|` | One to Zero or One |
+| `}o--o{` | Zero or Many to Zero or Many |
+
+### Comparison: Class Diagram vs ER Diagram
+
+| Aspect | Class Diagram (`classDiagram`) | ER Diagram (`erDiagram`) |
+|--------|-------------------------------|--------------------------|
+| **Purpose** | Domain/Object modeling | Database/Data modeling |
+| **Relationship** | `"1" -- "0..*"` | `\|\|--o{` |
+| **Inheritance** | `<\|--` (supported) | Not supported |
+| **Methods** | Supported | Not supported |
+| **Primary Key** | Not explicit | `PK` notation |
+| **Foreign Key** | Not explicit | `FK` notation |
+
+### ⚠️ DO NOT MIX SYNTAX
+
+```
+❌ WRONG (mixing syntax):
+classDiagram
+    A ||--o{ B
+
+❌ WRONG (mixing syntax):
+erDiagram
+    A <|-- B
+
+✅ CORRECT:
+Use classDiagram for OOP relationships
+Use erDiagram for database relationships
+```
+
+---
+
+## 6. Document Format Standards
 
 ### MANDATORY Rules
 
@@ -265,7 +428,7 @@ Core Activities: Resource topology management, Agent configuration, Monitoring..
 
 ---
 
-## 5. Diagram Quality Standards
+## 7. Diagram Quality Standards
 
 ### MANDATORY Rules
 
@@ -300,7 +463,7 @@ graph TD
 
 ---
 
-## 6. Diagram Decomposition Guidelines
+## 8. Diagram Decomposition Guidelines
 
 ### When to Decompose
 
