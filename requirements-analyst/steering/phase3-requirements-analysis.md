@@ -122,7 +122,50 @@ inclusion: agent
 
 ## Method 1: User Story Mapping
 
-**OUTPUT TEMPLATE**: Use `template-user-story.md` for user story document output format.
+**OUTPUT TEMPLATE**: Use `template-analysis.md` for output format.
+
+### Core User Activity Flow (UML Activity Diagram)
+
+**MUST use `stateDiagram-v2` for user activity flows:**
+
+```mermaid
+stateDiagram-v2
+    [*] --> Browse: Start
+
+    Browse --> Select
+    Select --> Decision1
+
+    state Decision1 <<choice>>
+    Decision1 --> Purchase: [Add to Cart]
+    Decision1 --> Browse: [Continue Shopping]
+
+    Purchase --> Payment
+    Payment --> Decision2
+
+    state Decision2 <<choice>>
+    Decision2 --> Receive: [Success]
+    Decision2 --> Purchase: [Retry]
+
+    Receive --> Support
+    Support --> [*]: End
+
+    Browse: 浏览商品 (Browse)
+    Select: 选择商品 (Select)
+    Purchase: 下单购买 (Purchase)
+    Payment: 支付处理 (Payment)
+    Receive: 收货确认 (Receive)
+    Support: 售后支持 (Support)
+```
+
+**Activity Diagram Elements:**
+| Element | UML Standard | Mermaid Syntax |
+|---------|--------------|----------------|
+| Start Node | Filled circle | `[*] -->` |
+| End Node | Bull's eye | `--> [*]` |
+| Activity | Rounded rectangle | `StateName: Label` |
+| Decision | Diamond | `state Name <<choice>>` |
+| Transition | Arrow with guard | `--> Target: [condition]` |
+| Fork/Join | Thick bar | `state Name { ... }` |
 
 ### User Story Format
 
@@ -142,7 +185,9 @@ Each user story MUST be:
 - **S**mall: Fits within a sprint
 - **T**estable: Has clear acceptance criteria
 
-### User Story Map Template
+### User Story Map Visualization
+
+> **Note**: Story Map is an Agile visualization technique (not UML). Use `graph TB` with subgraphs for matrix layout.
 
 ```mermaid
 graph TB

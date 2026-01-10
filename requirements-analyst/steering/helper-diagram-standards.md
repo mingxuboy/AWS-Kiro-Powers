@@ -32,11 +32,23 @@ This document defines the mandatory standards for UML diagrams and documentation
 | Requirement Type | UML Diagram | Mermaid Type |
 |------------------|-------------|--------------|
 | System interactions | Use Case Diagram | `graph TB` with actors |
-| Process flow | Activity Diagram | `stateDiagram-v2` |
+| **Process flow** | **Activity Diagram** | **`stateDiagram-v2`** |
 | Time-based interactions | Sequence Diagram | `sequenceDiagram` |
 | Object relationships | Class Diagram | `classDiagram` |
 | State transitions | State Diagram | `stateDiagram-v2` |
 | Component structure | Component Diagram | `graph TB` with subgraphs |
+
+### Non-UML Diagram Guide
+
+| Visualization Type | Purpose | Mermaid Type |
+|--------------------|---------|--------------|
+| User Story Map | Release planning matrix | `graph TB` with subgraphs |
+| Dependency Graph | Requirement relationships | `graph LR/TD` |
+| Traceability | Mapping connections | `graph LR` |
+| Mind Map | Brainstorming | `mindmap` |
+| Timeline | Milestones | `timeline` |
+
+> **IMPORTANT**: For **user activity flows** and **business processes**, ALWAYS use `stateDiagram-v2` (UML Activity Diagram), NOT `graph` (flowchart).
 
 ---
 
