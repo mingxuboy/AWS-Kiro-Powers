@@ -12,6 +12,18 @@ A comprehensive requirements engineering power that guides you through the compl
 
 ---
 
+## General Principles
+
+### Cross-Platform Compatibility
+
+When executing shell commands, AI MUST detect the user's operating system and use platform-appropriate commands. Do NOT hardcode platform-specific commands in steering files.
+
+### Intent-Based Instructions
+
+All instructions in this power describe **what to do** (intent), not **how to do it** (implementation). AI should determine the appropriate method based on context, platform, and available tools.
+
+---
+
 ## MANDATORY FIRST STEP: Language Selection
 
 **CRITICAL**: You MUST ask user to select language BEFORE any other interaction. This is NON-NEGOTIABLE.
@@ -49,11 +61,7 @@ Once language is selected:
 
 ### Step 1: Check for Existing Specs
 
-Check if `.kiro/specs/` directory exists and contains any spec folders:
-
-```bash
-ls -d .kiro/specs/*/ 2>/dev/null
-```
+Check if `.kiro/specs/` directory exists and list all subdirectories (spec folders).
 
 ### Step 2: Prompt Based on Results
 

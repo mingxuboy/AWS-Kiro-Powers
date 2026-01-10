@@ -47,9 +47,7 @@ inclusion: agent
 
 ### Step 1: Check for Validation File
 
-```bash
-ls .kiro/specs/[feature-name]/05-validation.md 2>/dev/null
-```
+Check if `05-validation.md` exists in the current spec folder.
 
 ### Step 2: If Validation File Exists
 
