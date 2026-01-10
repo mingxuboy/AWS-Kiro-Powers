@@ -224,6 +224,11 @@ Why I'm asking: Different user types (admin, customer, guest) have different aut
 What user roles will use this? What are the security requirements? Do you need password reset?
 ```
 
+#### Pre-Send Check (BEFORE each question)
+- [ ] Am I asking only ONE question?
+- [ ] Is this the highest priority unanswered question?
+- [ ] Have I explained why I'm asking this?
+
 #### Multiple-Choice Question Format
 
 ```markdown
