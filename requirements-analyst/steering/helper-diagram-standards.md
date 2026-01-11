@@ -55,6 +55,62 @@ This document defines the mandatory standards for UML diagrams and documentation
 
 ---
 
+## ⛔ Mermaid Syntax Constraints (MANDATORY)
+
+**CRITICAL**: Mermaid has strict syntax rules. Violating these will cause parse errors.
+
+### Special Characters in Node Text
+
+| Character | Problem | Solution |
+|-----------|---------|----------|
+| `()` | Parsed as node shape | Use quotes: `["text (note)"]` |
+| `[]` | Parsed as node shape | Use quotes: `["text [note]"]` |
+| `{}` | Parsed as node shape | Use quotes: `["text {note}"]` |
+| `<>` | Parsed as HTML/link | Use quotes or escape: `["text <note>"]` |
+| `/` | May cause issues | Use quotes: `["A/B"]` |
+
+### Node Definition Rules
+
+**DO**:
+```mermaid
+graph TD
+    A["External Library (G6/Cytoscape)"]
+    B["Config File [JSON]"]
+    C["Status {Active}"]
+```
+
+**DO NOT**:
+```
+graph TD
+    A[External Library (G6/Cytoscape)]   ❌ Parse error
+    B[Config File [JSON]]                 ❌ Parse error
+    C[Status {Active}]                    ❌ Parse error
+```
+
+### Text with Line Breaks
+
+**DO**:
+```mermaid
+graph TD
+    A["Line 1<br/>Line 2"]
+```
+
+**DO NOT**:
+```
+graph TD
+    A[Line 1<br/>(Note)]   ❌ Parentheses cause parse error
+```
+
+### Verification Checklist
+
+Before generating ANY Mermaid diagram, verify:
+- [ ] All node text with special characters `()[]{}/<>` wrapped in quotes `""`
+- [ ] No unescaped parentheses in node labels
+- [ ] No unescaped brackets in node labels
+- [ ] Line breaks `<br/>` only used inside quoted strings
+
+---
+
 ## 1. UML Use Case Diagram Standards
 
 ### MANDATORY Rules
