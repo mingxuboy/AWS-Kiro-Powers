@@ -16,7 +16,6 @@ inclusion: agent
 |-------------|--------|---------|------------|
 | PRD Document | Markdown/PDF | Complete product requirements | ✅ Yes |
 | API Specification | OpenAPI YAML | API contract definition | If API-heavy |
-| BDD Scenarios | Gherkin | Executable test scenarios | ✅ Yes |
 | RTM | Markdown | Requirements traceability matrix | ✅ Yes |
 | Requirements Baseline | Version controlled | Change management | ✅ Yes |
 
@@ -32,7 +31,6 @@ inclusion: agent
 **Additional Deliverables**:
 - `.kiro/specs/[feature-name]/api.yaml` - OpenAPI specification (if applicable)
 - `.kiro/specs/[feature-name]/rtm.md` - Requirements Traceability Matrix
-- `.kiro/specs/[feature-name]/features/*.feature` - BDD scenarios
 
 > **Dependencies**: See `POWER.md` → File Dependencies for required template and helper files.
 
@@ -68,7 +66,7 @@ Before I generate the specification documents, I need to know your template pref
 
 | Option | Description |
 |--------|-------------|
-| **A** | **Use Default Templates** - Use the built-in PRD, API, and BDD templates |
+| **A** | **Use Default Templates** - Use the built-in PRD and API templates |
 | **B** | **Use Custom Template** - Provide your own specification template |
 | **C** | **Use Both** - Start with custom template, supplement with default sections |
 
@@ -151,9 +149,8 @@ Support these placeholder formats:
 
 1. **PRD Document**: Write complete Product Requirements Document
 2. **API Specification**: Define API design document (if applicable)
-3. **BDD Scenarios**: Write BDD test scenarios in Gherkin format
-4. **RTM**: Create Requirements Traceability Matrix linking requirements to design, code, and tests
-5. **Requirements Baseline**: Establish formal requirements baseline with version control
+3. **RTM**: Create Requirements Traceability Matrix linking requirements to design, code, and tests
+4. **Requirements Baseline**: Establish formal requirements baseline with version control
 
 ## What You MUST NEVER Do
 
@@ -222,47 +219,7 @@ Define API contracts using OpenAPI 3.0 specification for development and documen
 
 ---
 
-## Method 3: BDD Scenarios (Gherkin)
-
-### Purpose
-
-Write executable test scenarios in Gherkin format for behavior-driven development.
-
-### BDD Structure Overview
-
-| Element | Syntax | Purpose |
-|---------|--------|---------|
-| Feature | `Feature: [Name]` | Describe the feature being tested |
-| Background | `Background:` | Common preconditions for all scenarios |
-| Scenario | `Scenario: [Name]` | Single test case |
-| Scenario Outline | `Scenario Outline:` | Parameterized test with Examples |
-| Given | `Given [context]` | Preconditions |
-| When | `When [action]` | Action being tested |
-| Then | `Then [outcome]` | Expected result |
-| And/But | `And [additional]` | Additional steps |
-| Tags | `@tag` | Categorization (e.g., `@happy-path`, `@security`) |
-
-### Recommended Tags
-
-| Tag | Purpose |
-|-----|---------|
-| `@happy-path` | Main success scenarios |
-| `@error-handling` | Error and validation scenarios |
-| `@security` | Security-related scenarios |
-| `@edge-case` | Boundary and edge cases |
-| `@performance` | Performance requirements |
-| `@priority-high/medium/low` | Priority classification |
-
-### When to Use BDD
-
-- Test-driven development
-- Acceptance testing
-- Stakeholder communication
-- Living documentation
-
----
-
-## Method 4: Requirements Traceability Matrix (RTM)
+## Method 3: Requirements Traceability Matrix (RTM)
 
 ### Purpose
 
@@ -309,7 +266,7 @@ Track these metrics for each requirement:
 
 ---
 
-## Method 5: Requirements Baseline Management
+## Method 4: Requirements Baseline Management
 
 ### Version Numbering
 
@@ -383,7 +340,6 @@ After completing all 6 phases, verify:
 - [ ] ✅ Validation report
 - [ ] ✅ PRD document
 - [ ] ✅ API specification (if applicable)
-- [ ] ✅ BDD scenarios
 - [ ] ✅ Requirements Traceability Matrix (RTM)
 - [ ] ✅ Requirements baseline with version control
 
@@ -395,7 +351,6 @@ After completing all 6 phases, verify:
 |----------|----------|--------------|--------|
 | PRD Document | Complete and reviewed | Checklist verified | [ ] |
 | API Specification | OpenAPI format (if applicable) | Schema validated | [ ] |
-| BDD Scenarios | Core features covered | Syntax validated | [ ] |
 | RTM | All requirements traced | Coverage > 80% | [ ] |
 | Requirements Baseline | Version established | Git tagged | [ ] |
 | Version Control | Under management | Repository confirmed | [ ] |
@@ -409,7 +364,6 @@ You have completed all 6 phases of requirements engineering.
 
 **Next Steps**: Proceed to design phase with:
 - Approved PRD as input
-- BDD scenarios for test-driven development
 - API specifications for development contracts
 - RTM for ongoing traceability and change impact analysis
 

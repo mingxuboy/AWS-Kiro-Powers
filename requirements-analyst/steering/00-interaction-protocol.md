@@ -30,7 +30,7 @@ For complex projects:
 3. **Analysis** - User stories, use cases, domain modeling
 4. **Clarification** - Systematic questioning to eliminate ambiguity
 5. **Validation** - Reviews, acceptance criteria, prototype testing
-6. **Specification** - PRD writing, BDD scenarios, baseline management
+6. **Specification** - PRD writing, RTM, baseline management
 
 ### Simplified Workflow (3 Phases)
 For quick requirements:
