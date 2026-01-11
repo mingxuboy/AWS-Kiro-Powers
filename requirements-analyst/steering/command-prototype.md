@@ -12,7 +12,7 @@ inclusion: agent
 
 | Aspect | Guideline |
 |--------|-----------|
-| Input | `03-analysis.md` (user stories, use cases) |
+| Input | `requirements.md` (user stories, use cases) |
 | Output | `prototype/` directory with static HTML |
 | Style | Clean, minimal CSS (no frameworks) |
 | Generation | ONE page at a time |
@@ -38,7 +38,7 @@ inclusion: agent
 
 **MUST verify before starting**:
 
-- [ ] `03-analysis.md` exists with user stories
+- [ ] `requirements.md` exists with user stories
 - [ ] User flows/use cases are documented
 - [ ] Spec folder path confirmed
 
@@ -75,7 +75,7 @@ inclusion: agent
 
 ### Step 1: Analyze Requirements
 
-Read `03-analysis.md` and extract:
+Read `requirements.md` and extract:
 - User stories with UI implications
 - Use case flows (main + alternative)
 - Data entities to display

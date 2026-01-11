@@ -41,7 +41,7 @@ After language confirmed, load `steering/00-interaction-protocol.md`.
 4. Detect phase status:
    - `01-discovery.md` → Phase 1 done
    - `02-sort.md` → Phase 2 done
-   - `03-analysis.md` → Phase 3 done
+   - `requirements.md` → Phase 3 done
    - `04-clarification.md` → Phase 4 done
    - `05-validation.md` → Phase 5 done
    - `prd.md` → Phase 6 done
@@ -117,7 +117,7 @@ When loading a phase, also load its dependencies:
 
 1. **Load Before Execute**: MUST load template + helper files BEFORE starting phase work (if not already loaded)
 2. **Copy Then Edit Workflow**:
-   - First, copy template file to target location (e.g., `cp template-analysis.md .kiro/specs/[name]/03-analysis.md`)
+   - First, copy template file to target location (e.g., `cp template-analysis.md .kiro/specs/[name]/requirements.md`)
    - Then edit the copied file section by section using Edit tool
    - This allows user to see progress immediately instead of waiting for full generation
 3. **Section by Section**: Edit ONE section at a time, do NOT generate entire document at once
@@ -190,7 +190,7 @@ Before submitting ANY output, verify:
 .kiro/specs/[spec-name]/
 ├── 01-discovery.md
 ├── 02-sort.md
-├── 03-analysis.md
+├── requirements.md
 ├── data-model.md
 ├── 04-clarification.md
 ├── 05-validation.md

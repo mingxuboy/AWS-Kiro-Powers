@@ -5,7 +5,7 @@ inclusion: agent
 # Analysis Output Template
 
 **Output Files**:
-- `.kiro/specs/[feature-name]/03-analysis.md` - This template
+- `.kiro/specs/[feature-name]/requirements.md` - This template
 - `.kiro/specs/[feature-name]/data-model.md` - See `template-data-model.md`
 
 **Standards**: Must follow `helper-diagram-standards.md`

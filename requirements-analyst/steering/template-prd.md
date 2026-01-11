@@ -11,7 +11,7 @@ inclusion: agent
 **Source Documents**:
 - `01-discovery.md` - Stakeholder and context information
 - `02-sort.md` - Priority and release planning
-- `03-analysis.md` - User stories, use cases, domain model
+- `requirements.md` - User stories, use cases, domain model
 - `04-clarification.md` - Clarification decisions
 - `05-validation.md` - Validation results
 
@@ -50,7 +50,7 @@ inclusion: agent
 | Document | Location | Description |
 |----------|----------|-------------|
 | Discovery | `.kiro/specs/[name]/01-discovery.md` | Stakeholder analysis |
-| Analysis | `.kiro/specs/[name]/03-analysis.md` | Detailed requirements |
+| Analysis | `.kiro/specs/[name]/requirements.md` | Detailed requirements |
 | Clarification | `.kiro/specs/[name]/04-clarification.md` | Decision log |
 | Validation | `.kiro/specs/[name]/05-validation.md` | Validation report |
 | API Spec | `.kiro/specs/[name]/api.yaml` | API contract |

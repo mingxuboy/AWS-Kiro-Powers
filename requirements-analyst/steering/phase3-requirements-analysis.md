@@ -26,7 +26,7 @@ inclusion: agent
 ## Output
 
 **Files**:
-- `.kiro/specs/[feature-name]/03-analysis.md` - User stories, use cases, success criteria, dependencies
+- `.kiro/specs/[feature-name]/requirements.md` - User stories, use cases, success criteria, dependencies
 - `.kiro/specs/[feature-name]/data-model.md` - Entity definitions, relationships, state diagrams
 
 > **Dependencies**: See `POWER.md` → File Dependencies for required template and helper files.

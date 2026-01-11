@@ -75,7 +75,7 @@ Requirements MUST be validated from 5 role perspectives (see `helper-multi-role-
 **MUST pass this check before starting**:
 
 - [ ] **Phase 4 completed?** Verify `04-clarification.md` exists with resolved ambiguities
-- [ ] **Requirements documented?** All requirements in `03-analysis.md` are clarified
+- [ ] **Requirements documented?** All requirements in `requirements.md` are clarified
 - [ ] **Stakeholders available?** Reviewers from different roles identified
 
 **If ANY check fails**: STOP. Return to Phase 4.
@@ -504,7 +504,7 @@ Then [error handling behavior]
 stateDiagram-v2
     [*] --> LoadRequirements: Start Validation
 
-    LoadRequirements --> AuthenticityCheck: Load from 03-analysis.md
+    LoadRequirements --> AuthenticityCheck: Load from requirements.md
 
     state AuthenticityCheck {
         [*] --> VerifySource

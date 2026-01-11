@@ -40,7 +40,7 @@ inclusion: agent
 
 **Resolution**: [How this clarification was applied to the analysis document]
 
-**Applied To**: [Section in 03-analysis.md that was updated]
+**Applied To**: [Section in requirements.md that was updated]
 
 ---
 
@@ -70,9 +70,9 @@ inclusion: agent
 
 | # | Question | Category | Choice | Applied To |
 |---|----------|----------|--------|------------|
-| 1 | [Brief question summary] | [Category] | [A/B/C/Custom] | [Section in 03-analysis.md] |
-| 2 | [Brief question summary] | [Category] | [A/B/C/Custom] | [Section in 03-analysis.md] |
-| 3 | [Brief question summary] | [Category] | [A/B/C/Custom] | [Section in 03-analysis.md] |
+| 1 | [Brief question summary] | [Category] | [A/B/C/Custom] | [Section in requirements.md] |
+| 2 | [Brief question summary] | [Category] | [A/B/C/Custom] | [Section in requirements.md] |
+| 3 | [Brief question summary] | [Category] | [A/B/C/Custom] | [Section in requirements.md] |
 
 ---
 
@@ -159,7 +159,7 @@ Items that were identified but deferred for later resolution:
 
 ## Cross-References
 
-- **Analysis Document**: [03-analysis.md](./03-analysis.md) - Updated with clarifications
+- **Analysis Document**: [requirements.md](./requirements.md) - Updated with clarifications
 - **Previous Phase**: [02-sort.md](./02-sort.md) - Value sorting reference
 - **Next Phase**: [05-validation.md](./05-validation.md) - To be created
 

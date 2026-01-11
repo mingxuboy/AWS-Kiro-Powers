@@ -41,7 +41,7 @@ inclusion: agent
 
 **MUST pass this check before starting**:
 
-- [ ] **Phase 3 completed?** Verify `03-analysis.md` exists with user stories and use cases
+- [ ] **Phase 3 completed?** Verify `requirements.md` exists with user stories and use cases
 - [ ] **Ambiguities identified?** List requirements with `[NEEDS CLARIFICATION]` markers
 - [ ] **Stakeholder available?** User can answer clarification questions
 
@@ -188,7 +188,7 @@ Perform a structured ambiguity scan using this taxonomy:
 
 ### Step 1: Load and Analyze Specification
 
-Read `03-analysis.md` and scan for ambiguities using the taxonomy above.
+Read `requirements.md` and scan for ambiguities using the taxonomy above.
 
 **Identify**:
 - Vague terms: "user-friendly", "fast", "secure", "flexible"
@@ -322,7 +322,7 @@ After EACH answer update, verify:
 
 **BEFORE reporting completion**, verify:
 1. `04-clarification.md` has been created and saved
-2. `03-analysis.md` has been updated
+2. `requirements.md` has been updated
 3. All questions and answers are recorded
 
 **Output completion report**:
@@ -335,7 +335,7 @@ After EACH answer update, verify:
 | File | Path | Status |
 |------|------|--------|
 | Clarification Log | `.kiro/specs/[feature-name]/04-clarification.md` | CREATED |
-| Analysis | `.kiro/specs/[feature-name]/03-analysis.md` | UPDATED |
+| Analysis | `.kiro/specs/[feature-name]/requirements.md` | UPDATED |
 
 ### Session Summary
 
@@ -401,7 +401,7 @@ Based on the clarification results, you can choose one of the following:
 |----------|----------|--------------|--------|
 | Clarification Log | `04-clarification.md` created | File exists | [ ] |
 | All Q&A Recorded | Complete details for each question | Review log | [ ] |
-| Analysis Updated | Clarifications applied to `03-analysis.md` | Cross-reference | [ ] |
+| Analysis Updated | Clarifications applied to `requirements.md` | Cross-reference | [ ] |
 | No Contradictions | Consistent statements | Review both files | [ ] |
 | Critical Ambiguities | All critical ambiguities resolved | Review coverage | [ ] |
 
@@ -420,7 +420,7 @@ Based on the clarification results, you can choose one of the following:
 | Option | Action | Description |
 |--------|--------|-------------|
 | **A** | **Clarify** | Continue clarification - resolve deferred items or new ambiguities |
-| **B** | **Analyze** | Return to Analysis - update 03-analysis.md with clarification results |
+| **B** | **Analyze** | Return to Analysis - update requirements.md with clarification results |
 | **C** | **Validate** | Proceed to Validation - verify requirements through 5 dimensions |
 
 **Recommendation**: [Your recommendation based on session results]
