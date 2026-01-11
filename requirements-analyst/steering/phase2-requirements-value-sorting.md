@@ -280,10 +280,17 @@ REQ-001: (10,000 × 2 × 0.80) / 2 = 8,000
 **Dependencies**: V1.1 complete, [External dependency]
 
 ### Release Timeline
-```
-MVP ──────► V1.1 ──────► V2.0 ──────► V3.0
-[Date]      [Date]       [Date]       [Date]
-```
+
+\`\`\`mermaid
+gantt
+    title Release Timeline
+    dateFormat YYYY-MM-DD
+    section Releases
+    MVP        :milestone, m1, [Date], 0d
+    V1.1       :milestone, m2, [Date], 0d
+    V2.0       :milestone, m3, [Date], 0d
+    V3.0       :milestone, m4, [Date], 0d
+\`\`\`
 
 ### Risk Factors
 | Release | Risk | Mitigation |

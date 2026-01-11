@@ -780,16 +780,20 @@ graph TD
 
 ### 12.4 Roadmap
 
-\`\`\`
-MVP (v1.0)        v1.1              v2.0              v3.0
-    │               │                 │                 │
-    ▼               ▼                 ▼                 ▼
-┌───────┐       ┌───────┐         ┌───────┐         ┌───────┐
-│ Core  │       │ UX    │         │ Scale │         │ AI    │
-│ CRUD  │──────▶│ Polish│────────▶│ Perf  │────────▶│ Feat  │
-│       │       │       │         │       │         │       │
-└───────┘       └───────┘         └───────┘         └───────┘
-[Date]          [Date]            [Date]            [Date]
+\`\`\`mermaid
+gantt
+    title Release Roadmap
+    dateFormat YYYY-MM-DD
+    section Releases
+    MVP (v1.0) Core CRUD       :milestone, m1, 2025-03-31, 0d
+    v1.1 UX Polish             :milestone, m2, 2025-06-30, 0d
+    v2.0 Scale & Performance   :milestone, m3, 2025-12-31, 0d
+    v3.0 AI Features           :milestone, m4, 2026-06-30, 0d
+    section Development
+    MVP Development            :2025-01-01, 2025-03-31
+    v1.1 Development           :2025-04-01, 2025-06-30
+    v2.0 Development           :2025-07-01, 2025-12-31
+    v3.0 Development           :2026-01-01, 2026-06-30
 \`\`\`
 
 ---
