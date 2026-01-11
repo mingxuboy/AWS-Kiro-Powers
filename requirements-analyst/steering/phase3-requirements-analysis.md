@@ -20,6 +20,7 @@ inclusion: agent
 | Event Storming | Domain events and commands | Domain model | Complex business logic |
 | Dependency Analysis | Requirement relationships | Dependency graph | Multi-requirement projects |
 | Domain Data Modeling | Entities and relationships | data-model.md | Projects with data entities |
+| NFR Analysis | System qualities | NFR specification | All projects |
 
 ---
 
@@ -770,6 +771,141 @@ stateDiagram-v2
 
 ---
 
+## Method 7: Non-Functional Requirements (NFR) Analysis
+
+### Purpose
+
+Systematically identify, categorize, and specify non-functional requirements that define system qualities beyond functional behavior. NFRs are critical for system architecture decisions and quality assurance.
+
+### NFR Categories (FURPS+ Model)
+
+| Category | Focus | Key Questions |
+|----------|-------|---------------|
+| **Performance** | Speed & Efficiency | Response time? Throughput? Concurrent users? |
+| **Security** | Protection | Authentication? Authorization? Data encryption? Audit? |
+| **Reliability** | Availability | Uptime SLA? Failover? Data backup? Recovery time? |
+| **Usability** | User Experience | Accessibility (WCAG)? Learnability? Error handling? |
+| **Scalability** | Growth Capacity | Horizontal/vertical scaling? Data volume growth? |
+| **Maintainability** | Operational | Logging? Monitoring? Deployment? Documentation? |
+| **Compatibility** | Integration | Browsers? Devices? OS? Third-party systems? |
+
+### NFR Specification Template
+
+```markdown
+### NFR-001: [Requirement Name]
+
+| Field | Value |
+|-------|-------|
+| **Category** | Performance / Security / Reliability / Usability / Scalability / Maintainability / Compatibility |
+| **Priority** | P0 / P1 / P2 |
+| **Related FR** | US-XXX, UC-XXX (functional requirements this NFR applies to) |
+
+**Requirement Statement**:
+> The system SHALL [measurable requirement statement]
+
+**Metric & Target**:
+| Metric | Target | Measurement Method |
+|--------|--------|-------------------|
+| [What to measure] | [Quantified goal] | [How to verify] |
+
+**Rationale**: [Why this NFR is needed]
+
+**Constraints**: [Technical or business constraints affecting this NFR]
+```
+
+### NFR by Category Examples
+
+#### Performance
+
+| NFR ID | Requirement | Metric | Target |
+|--------|-------------|--------|--------|
+| NFR-P01 | Page load time | Time to First Contentful Paint | < 1.5s |
+| NFR-P02 | API response time | 95th percentile latency | < 200ms |
+| NFR-P03 | Concurrent users | Simultaneous active sessions | ≥ 10,000 |
+| NFR-P04 | Throughput | Transactions per second | ≥ 1,000 TPS |
+
+#### Security
+
+| NFR ID | Requirement | Metric | Target |
+|--------|-------------|--------|--------|
+| NFR-S01 | Authentication | Multi-factor authentication | Required for admin |
+| NFR-S02 | Data encryption | Encryption at rest | AES-256 |
+| NFR-S03 | Data encryption | Encryption in transit | TLS 1.3 |
+| NFR-S04 | Session management | Session timeout | 30 min inactive |
+| NFR-S05 | Audit logging | Security events logged | 100% coverage |
+
+#### Reliability
+
+| NFR ID | Requirement | Metric | Target |
+|--------|-------------|--------|--------|
+| NFR-R01 | Availability | Uptime SLA | 99.9% (8.76h downtime/year) |
+| NFR-R02 | Disaster recovery | Recovery Time Objective (RTO) | < 4 hours |
+| NFR-R03 | Data durability | Recovery Point Objective (RPO) | < 1 hour |
+| NFR-R04 | Backup | Backup frequency | Daily full, hourly incremental |
+
+#### Usability
+
+| NFR ID | Requirement | Metric | Target |
+|--------|-------------|--------|--------|
+| NFR-U01 | Accessibility | WCAG compliance | Level AA |
+| NFR-U02 | Learnability | Time to complete key task (new user) | < 5 min |
+| NFR-U03 | Error recovery | User can recover from error | Without data loss |
+| NFR-U04 | Localization | Supported languages | EN, ZH-CN |
+
+#### Scalability
+
+| NFR ID | Requirement | Metric | Target |
+|--------|-------------|--------|--------|
+| NFR-SC01 | Horizontal scaling | Auto-scale trigger | CPU > 70% |
+| NFR-SC02 | Data growth | Storage capacity plan | 100GB/year growth |
+| NFR-SC03 | User growth | Support user base | 1M users by Year 2 |
+
+#### Maintainability
+
+| NFR ID | Requirement | Metric | Target |
+|--------|-------------|--------|--------|
+| NFR-M01 | Logging | Log retention | 90 days |
+| NFR-M02 | Monitoring | System health dashboard | Real-time |
+| NFR-M03 | Deployment | Deployment frequency | On-demand, < 30min |
+| NFR-M04 | Documentation | API documentation | 100% coverage |
+
+#### Compatibility
+
+| NFR ID | Requirement | Metric | Target |
+|--------|-------------|--------|--------|
+| NFR-C01 | Browser support | Supported browsers | Chrome, Firefox, Safari, Edge (latest 2 versions) |
+| NFR-C02 | Mobile support | Responsive design | iOS 14+, Android 10+ |
+| NFR-C03 | API compatibility | API versioning | Backward compatible for 2 major versions |
+
+### NFR Prioritization Matrix
+
+```mermaid
+quadrantChart
+    title NFR Priority Matrix
+    x-axis Low Impact --> High Impact
+    y-axis Low Effort --> High Effort
+    quadrant-1 Plan Carefully
+    quadrant-2 High Priority
+    quadrant-3 Low Priority
+    quadrant-4 Quick Wins
+    Performance: [0.8, 0.6]
+    Security: [0.9, 0.7]
+    Reliability: [0.85, 0.8]
+    Usability: [0.6, 0.4]
+    Scalability: [0.7, 0.75]
+```
+
+### NFR Checklist
+
+- [ ] All NFR categories reviewed (Performance, Security, Reliability, Usability, Scalability, Maintainability, Compatibility)
+- [ ] Each NFR has measurable target and verification method
+- [ ] NFRs linked to related functional requirements
+- [ ] Priority assigned to each NFR
+- [ ] Constraints and trade-offs documented
+- [ ] Stakeholder sign-off on NFR targets
+
+---
+
 ## Exit Criteria (NON-NEGOTIABLE)
 
 | Criteria | Standard | Verification | Status |
@@ -780,6 +916,7 @@ stateDiagram-v2
 | Use Case Diagrams | Main use cases documented with Sequence Diagrams | Review interactions | [ ] |
 | **Success Criteria** | SMART criteria defined for key requirements | Verify measurability | [ ] |
 | **Data Model** | `data-model.md` created with entities and relationships | Verify ER diagram and state diagrams | [ ] |
+| **NFR Analysis** | All NFR categories reviewed with measurable targets | Verify NFR completeness | [ ] |
 | Dependency Graph | Dependencies mapped | Check for circular | [ ] |
 | Feasibility Assessment | Technical risks evaluated | Risk assessment complete | [ ] |
 

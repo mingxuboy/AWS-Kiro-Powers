@@ -352,7 +352,67 @@ graph TD
 
 ---
 
-## 10. Analysis Update Log (If Iterating)
+## 10. Non-Functional Requirements (NFR)
+
+### NFR Summary
+
+| Category | Count | Priority Distribution |
+|----------|-------|----------------------|
+| Performance | [N] | P0: [n], P1: [n], P2: [n] |
+| Security | [N] | P0: [n], P1: [n], P2: [n] |
+| Reliability | [N] | P0: [n], P1: [n], P2: [n] |
+| Usability | [N] | P0: [n], P1: [n], P2: [n] |
+| Scalability | [N] | P0: [n], P1: [n], P2: [n] |
+| Maintainability | [N] | P0: [n], P1: [n], P2: [n] |
+| Compatibility | [N] | P0: [n], P1: [n], P2: [n] |
+
+### Performance Requirements
+
+| NFR ID | Requirement | Metric | Target | Related FR |
+|--------|-------------|--------|--------|------------|
+| NFR-P01 | [Requirement] | [Metric] | [Target] | US-XXX |
+| NFR-P02 | [Requirement] | [Metric] | [Target] | UC-XXX |
+
+### Security Requirements
+
+| NFR ID | Requirement | Metric | Target | Related FR |
+|--------|-------------|--------|--------|------------|
+| NFR-S01 | [Requirement] | [Metric] | [Target] | US-XXX |
+| NFR-S02 | [Requirement] | [Metric] | [Target] | UC-XXX |
+
+### Reliability Requirements
+
+| NFR ID | Requirement | Metric | Target | Related FR |
+|--------|-------------|--------|--------|------------|
+| NFR-R01 | [Requirement] | [Metric] | [Target] | US-XXX |
+
+### Usability Requirements
+
+| NFR ID | Requirement | Metric | Target | Related FR |
+|--------|-------------|--------|--------|------------|
+| NFR-U01 | [Requirement] | [Metric] | [Target] | US-XXX |
+
+### Scalability Requirements
+
+| NFR ID | Requirement | Metric | Target | Related FR |
+|--------|-------------|--------|--------|------------|
+| NFR-SC01 | [Requirement] | [Metric] | [Target] | US-XXX |
+
+### Maintainability Requirements
+
+| NFR ID | Requirement | Metric | Target | Related FR |
+|--------|-------------|--------|--------|------------|
+| NFR-M01 | [Requirement] | [Metric] | [Target] | US-XXX |
+
+### Compatibility Requirements
+
+| NFR ID | Requirement | Metric | Target | Related FR |
+|--------|-------------|--------|--------|------------|
+| NFR-C01 | [Requirement] | [Metric] | [Target] | US-XXX |
+
+---
+
+## 11. Analysis Update Log (If Iterating)
 
 > **Note**: Complete this section ONLY if `clarification.md` or `validation.md` already exist.
 
@@ -380,7 +440,7 @@ graph TD
 
 ---
 
-## 11. Analysis Summary
+## 12. Analysis Summary
 
 **User Roles Identified**:
 - [Role 1]
@@ -402,7 +462,7 @@ graph TD
 
 ---
 
-## 12. Related Artifacts
+## 13. Related Artifacts
 
 ### Data Model
 
@@ -422,7 +482,7 @@ graph TD
 
 ---
 
-## 13. Next Steps
+## 14. Next Steps
 
 - [ ] Proceed to Phase 4: Clarify (Requirements Clarification)
 - [ ] OR if iterating: Return to Phase 4/5 with updated analysis
