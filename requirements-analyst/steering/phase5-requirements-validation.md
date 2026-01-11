@@ -74,7 +74,7 @@ Requirements MUST be validated from 5 role perspectives (see `helper-multi-role-
 
 **MUST pass this check before starting**:
 
-- [ ] **Phase 4 completed?** Verify `04-clarification.md` exists with resolved ambiguities
+- [ ] **Phase 4 completed?** Verify `clarification.md` exists with resolved ambiguities
 - [ ] **Requirements documented?** All requirements in `requirements.md` are clarified
 - [ ] **Stakeholders available?** Reviewers from different roles identified
 

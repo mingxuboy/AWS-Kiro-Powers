@@ -354,9 +354,9 @@ graph TD
 
 ## 10. Analysis Update Log (If Iterating)
 
-> **Note**: Complete this section ONLY if `04-clarification.md` or `05-validation.md` already exist.
+> **Note**: Complete this section ONLY if `clarification.md` or `05-validation.md` already exist.
 
-### Applied from 04-clarification.md
+### Applied from clarification.md
 
 | Q# | Clarification Summary | Applied To | Section Updated |
 |----|----------------------|------------|-----------------|

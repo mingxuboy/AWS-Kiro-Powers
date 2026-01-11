@@ -4,7 +4,7 @@ inclusion: agent
 
 # Clarification Output Template
 
-**Output File**: `.kiro/specs/[feature-name]/04-clarification.md`
+**Output File**: `.kiro/specs/[feature-name]/clarification.md`
 
 **Standards**: Must follow Ambiguity Taxonomy from `phase4-requirements-clarification.md`
 

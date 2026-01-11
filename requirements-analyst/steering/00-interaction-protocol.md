@@ -48,7 +48,7 @@ For quick requirements:
 ├── 02-sort.md
 ├── requirements.md
 ├── data-model.md
-├── 04-clarification.md
+├── clarification.md
 ├── 05-validation.md
 ├── prd.md
 └── assets/

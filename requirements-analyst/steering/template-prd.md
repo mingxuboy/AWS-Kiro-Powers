@@ -12,7 +12,7 @@ inclusion: agent
 - `01-discovery.md` - Stakeholder and context information
 - `02-sort.md` - Priority and release planning
 - `requirements.md` - User stories, use cases, domain model
-- `04-clarification.md` - Clarification decisions
+- `clarification.md` - Clarification decisions
 - `05-validation.md` - Validation results
 
 ---
@@ -51,7 +51,7 @@ inclusion: agent
 |----------|----------|-------------|
 | Discovery | `.kiro/specs/[name]/01-discovery.md` | Stakeholder analysis |
 | Analysis | `.kiro/specs/[name]/requirements.md` | Detailed requirements |
-| Clarification | `.kiro/specs/[name]/04-clarification.md` | Decision log |
+| Clarification | `.kiro/specs/[name]/clarification.md` | Decision log |
 | Validation | `.kiro/specs/[name]/05-validation.md` | Validation report |
 | API Spec | `.kiro/specs/[name]/api.yaml` | API contract |
 | RTM | `.kiro/specs/[name]/rtm.md` | Traceability matrix |
@@ -670,7 +670,7 @@ stateDiagram-v2
 
 ## 10. Clarification Decisions
 
-> **Source**: `04-clarification.md`
+> **Source**: `clarification.md`
 
 ### 10.1 Clarification Log
 

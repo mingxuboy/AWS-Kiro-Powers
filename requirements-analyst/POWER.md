@@ -42,7 +42,7 @@ After language confirmed, load `steering/00-interaction-protocol.md`.
    - `01-discovery.md` → Phase 1 done
    - `02-sort.md` → Phase 2 done
    - `requirements.md` → Phase 3 done
-   - `04-clarification.md` → Phase 4 done
+   - `clarification.md` → Phase 4 done
    - `05-validation.md` → Phase 5 done
    - `prd.md` → Phase 6 done
 5. Suggest next phase based on status
@@ -156,7 +156,7 @@ Before submitting ANY output, verify:
 | Phase 1 | Phase 2 | - | - |
 | Phase 2 | Phase 3 | - | - |
 | Phase 3 | Phase 4 | - | - |
-| Phase 4 | Phase 5, **Phase 3** | `04-clarification.md` | Re-analyze if scope changed |
+| Phase 4 | Phase 5, **Phase 3** | `clarification.md` | Re-analyze if scope changed |
 | Phase 5 (Pass) | Phase 6 | - | All validations passed |
 | Phase 5 (Fail: Authenticity) | **Phase 4** | `05-validation.md` | Need stakeholder confirmation |
 | Phase 5 (Fail: Completeness-missing) | **Phase 3** | `05-validation.md` | Need to add requirements |
@@ -192,7 +192,7 @@ Before submitting ANY output, verify:
 ├── 02-sort.md
 ├── requirements.md
 ├── data-model.md
-├── 04-clarification.md
+├── clarification.md
 ├── 05-validation.md
 ├── prd.md
 ├── api.yaml

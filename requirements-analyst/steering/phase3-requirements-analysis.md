@@ -107,7 +107,7 @@ inclusion: agent
 
 ```
 .kiro/specs/[feature-name]/
-├── 04-clarification.md  ← If exists, MUST reference
+├── clarification.md  ← If exists, MUST reference
 └── 05-validation.md     ← If exists, MUST reference
 ```
 
@@ -115,13 +115,13 @@ inclusion: agent
 
 | File Exists | Action Required |
 |-------------|-----------------|
-| `04-clarification.md` | Load and apply all resolved clarifications to analysis |
+| `clarification.md` | Load and apply all resolved clarifications to analysis |
 | `05-validation.md` | Load and address all validation findings in analysis |
 | Both files exist | This is an iteration - update analysis based on both |
 
 ### How to Apply Existing Clarifications
 
-1. **Read `04-clarification.md`** completely
+1. **Read `clarification.md`** completely
 2. **Extract all resolved Q&A** from the clarification log
 3. **Apply to analysis**:
    - User Stories must reflect clarified scope
@@ -147,7 +147,7 @@ inclusion: agent
 ```markdown
 ## Analysis Update Log
 
-### Applied from 04-clarification.md
+### Applied from clarification.md
 | Q# | Clarification | Applied To | Section |
 |----|---------------|------------|---------|
 | Q1 | [Summary] | US-001 | User Stories |

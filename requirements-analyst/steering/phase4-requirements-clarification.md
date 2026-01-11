@@ -17,12 +17,12 @@ inclusion: agent
 | Goal | Clarify ALL critical ambiguities (no fixed limit) |
 | Question Format | Multiple-choice (2-4 options) or Short phrase |
 | Delivery | ONE question at a time, wait for answer |
-| Output Files | `04-clarification.md` (log) + update Phase 3 outputs |
+| Output Files | `clarification.md` (log) + update Phase 3 outputs |
 
 ### ⚠️ CRITICAL: Update Files After EACH Answer
 
 **After user answers EACH question, you MUST IMMEDIATELY:**
-1. Write Q&A to `04-clarification.md`
+1. Write Q&A to `clarification.md`
 2. Check and update ALL affected Phase 3 outputs (see `POWER.md` → Output Structure)
 
 **DO NOT** ask next question until all affected files are updated.
@@ -31,7 +31,7 @@ inclusion: agent
 
 ## Output
 
-**File**: `.kiro/specs/[feature-name]/04-clarification.md`
+**File**: `.kiro/specs/[feature-name]/clarification.md`
 
 > **Dependencies**: See `POWER.md` → File Dependencies for required template and helper files.
 
@@ -282,14 +282,14 @@ Enter your answer (<=5 words), or "yes" to accept suggestion.
 **IMMEDIATELY after the FIRST question is answered**, create:
 
 ```
-.kiro/specs/[feature-name]/04-clarification.md
+.kiro/specs/[feature-name]/clarification.md
 ```
 
 #### 4.2 Update After EACH Answer (IMMEDIATE)
 
 **CRITICAL**: After EACH question is answered, you MUST **IMMEDIATELY** perform ALL of the following before asking the next question:
 
-1. **Record to clarification log** (`04-clarification.md`):
+1. **Record to clarification log** (`clarification.md`):
    - Append the Q&A record
    - Update the Summary table
 
@@ -312,7 +312,7 @@ Stop asking questions when ANY of these apply:
 ### Step 6: Per-Answer Validation
 
 After EACH answer update, verify:
-- [ ] Q&A recorded in `04-clarification.md`
+- [ ] Q&A recorded in `clarification.md`
 - [ ] ALL affected Phase 3 outputs updated
 - [ ] `[NEEDS CLARIFICATION]` markers removed
 - [ ] No contradictory statements introduced
@@ -321,7 +321,7 @@ After EACH answer update, verify:
 ### Step 7: Completion Report
 
 **BEFORE reporting completion**, verify:
-1. `04-clarification.md` has been created and saved
+1. `clarification.md` has been created and saved
 2. `requirements.md` has been updated
 3. All questions and answers are recorded
 
@@ -334,7 +334,7 @@ After EACH answer update, verify:
 
 | File | Path | Status |
 |------|------|--------|
-| Clarification Log | `.kiro/specs/[feature-name]/04-clarification.md` | CREATED |
+| Clarification Log | `.kiro/specs/[feature-name]/clarification.md` | CREATED |
 | Analysis | `.kiro/specs/[feature-name]/requirements.md` | UPDATED |
 
 ### Session Summary
@@ -399,7 +399,7 @@ Based on the clarification results, you can choose one of the following:
 
 | Criteria | Standard | Verification | Status |
 |----------|----------|--------------|--------|
-| Clarification Log | `04-clarification.md` created | File exists | [ ] |
+| Clarification Log | `clarification.md` created | File exists | [ ] |
 | All Q&A Recorded | Complete details for each question | Review log | [ ] |
 | Analysis Updated | Clarifications applied to `requirements.md` | Cross-reference | [ ] |
 | No Contradictions | Consistent statements | Review both files | [ ] |
