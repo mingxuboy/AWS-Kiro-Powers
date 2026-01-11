@@ -108,7 +108,7 @@ inclusion: agent
 ```
 .kiro/specs/[feature-name]/
 ├── clarification.md  ← If exists, MUST reference
-└── 05-validation.md     ← If exists, MUST reference
+└── validation.md     ← If exists, MUST reference
 ```
 
 ### When Files Exist (Iterative Analysis)
@@ -116,7 +116,7 @@ inclusion: agent
 | File Exists | Action Required |
 |-------------|-----------------|
 | `clarification.md` | Load and apply all resolved clarifications to analysis |
-| `05-validation.md` | Load and address all validation findings in analysis |
+| `validation.md` | Load and address all validation findings in analysis |
 | Both files exist | This is an iteration - update analysis based on both |
 
 ### How to Apply Existing Clarifications
@@ -131,7 +131,7 @@ inclusion: agent
 
 ### How to Apply Existing Validation Findings
 
-1. **Read `05-validation.md`** completely
+1. **Read `validation.md`** completely
 2. **Extract all issues and findings** by dimension:
    - Authenticity issues → Verify requirement sources
    - Completeness gaps → Fill missing specifications
@@ -153,7 +153,7 @@ inclusion: agent
 | Q1 | [Summary] | US-001 | User Stories |
 | Q2 | [Summary] | UC-002 | Use Cases |
 
-### Applied from 05-validation.md
+### Applied from validation.md
 | Issue | Finding | Applied To | Section |
 |-------|---------|------------|---------|
 | V-001 | [Summary] | SC-003 | Success Criteria |

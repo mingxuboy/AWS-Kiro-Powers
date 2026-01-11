@@ -161,7 +161,7 @@ Items that were identified but deferred for later resolution:
 
 - **Analysis Document**: [requirements.md](./requirements.md) - Updated with clarifications
 - **Previous Phase**: [02-sort.md](./02-sort.md) - Value sorting reference
-- **Next Phase**: [05-validation.md](./05-validation.md) - To be created
+- **Next Phase**: [validation.md](./validation.md) - To be created
 
 ---
 

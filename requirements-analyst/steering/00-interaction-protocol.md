@@ -49,7 +49,7 @@ For quick requirements:
 ├── requirements.md
 ├── data-model.md
 ├── clarification.md
-├── 05-validation.md
+├── validation.md
 ├── prd.md
 └── assets/
     ├── diagrams/

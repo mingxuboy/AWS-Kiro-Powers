@@ -4,7 +4,7 @@ inclusion: agent
 
 # Validation Output Template
 
-**Output File**: `.kiro/specs/[feature-name]/05-validation.md`
+**Output File**: `.kiro/specs/[feature-name]/validation.md`
 
 **Standards**: Must validate 5 dimensions from `phase5-requirements-validation.md`
 

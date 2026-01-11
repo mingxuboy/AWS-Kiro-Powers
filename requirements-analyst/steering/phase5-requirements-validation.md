@@ -24,7 +24,7 @@ inclusion: agent
 
 ## Output
 
-**File**: `.kiro/specs/[feature-name]/05-validation.md`
+**File**: `.kiro/specs/[feature-name]/validation.md`
 
 > **Dependencies**: See `POWER.md` → File Dependencies for required template and helper files.
 

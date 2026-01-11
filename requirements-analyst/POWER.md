@@ -43,7 +43,7 @@ After language confirmed, load `steering/00-interaction-protocol.md`.
    - `02-sort.md` → Phase 2 done
    - `requirements.md` → Phase 3 done
    - `clarification.md` → Phase 4 done
-   - `05-validation.md` → Phase 5 done
+   - `validation.md` → Phase 5 done
    - `prd.md` → Phase 6 done
 5. Suggest next phase based on status
 
@@ -158,12 +158,12 @@ Before submitting ANY output, verify:
 | Phase 3 | Phase 4 | - | - |
 | Phase 4 | Phase 5, **Phase 3** | `clarification.md` | Re-analyze if scope changed |
 | Phase 5 (Pass) | Phase 6 | - | All validations passed |
-| Phase 5 (Fail: Authenticity) | **Phase 4** | `05-validation.md` | Need stakeholder confirmation |
-| Phase 5 (Fail: Completeness-missing) | **Phase 3** | `05-validation.md` | Need to add requirements |
-| Phase 5 (Fail: Completeness-unclear) | **Phase 4** | `05-validation.md` | Need to resolve ambiguities |
-| Phase 5 (Fail: Consistency) | **Phase 3** | `05-validation.md` | Need to restructure |
-| Phase 5 (Fail: Feasibility) | **Phase 3/4** | `05-validation.md` | Depends on issue type |
-| Phase 5 (Fail: Verifiability) | **Phase 4** | `05-validation.md` | Need acceptance criteria |
+| Phase 5 (Fail: Authenticity) | **Phase 4** | `validation.md` | Need stakeholder confirmation |
+| Phase 5 (Fail: Completeness-missing) | **Phase 3** | `validation.md` | Need to add requirements |
+| Phase 5 (Fail: Completeness-unclear) | **Phase 4** | `validation.md` | Need to resolve ambiguities |
+| Phase 5 (Fail: Consistency) | **Phase 3** | `validation.md` | Need to restructure |
+| Phase 5 (Fail: Feasibility) | **Phase 3/4** | `validation.md` | Depends on issue type |
+| Phase 5 (Fail: Verifiability) | **Phase 4** | `validation.md` | Need acceptance criteria |
 | Phase 6 | Prototype, Complete | `.kiro/templates/` (if custom) | - |
 
 **Verification** (Check BEFORE completing phase):
@@ -193,7 +193,7 @@ Before submitting ANY output, verify:
 ├── requirements.md
 ├── data-model.md
 ├── clarification.md
-├── 05-validation.md
+├── validation.md
 ├── prd.md
 ├── api.yaml
 ├── rtm.md

@@ -51,17 +51,17 @@ inclusion: agent
 
 ## Validation Failure Check (PRIORITY)
 
-**CRITICAL**: Before starting clarification, check if `05-validation.md` exists. If it does, this is a **re-clarification** session triggered by validation failures.
+**CRITICAL**: Before starting clarification, check if `validation.md` exists. If it does, this is a **re-clarification** session triggered by validation failures.
 
 ### Step 1: Check for Validation File
 
-Check if `05-validation.md` exists in the current spec folder.
+Check if `validation.md` exists in the current spec folder.
 
 ### Step 2: If Validation File Exists
 
 **You MUST:**
 
-1. **Load and analyze** `05-validation.md`
+1. **Load and analyze** `validation.md`
 2. **Extract failed dimensions** - Identify dimensions with score < 80% or status ❌/⚠️
 3. **List specific issues** - Extract the "Negative Findings" from each failed dimension
 4. **Prioritize clarification** - Focus questions on issues causing validation failures
