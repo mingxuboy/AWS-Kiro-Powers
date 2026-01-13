@@ -39,6 +39,7 @@ After language confirmed, load `steering/00-interaction-protocol.md`.
 2. If exists: List specs with phase status, let user select or create new
 3. If empty: Ask for new spec name (lowercase, alphanumeric, hyphens only)
 4. Detect phase status:
+   - `reverse.md` → Reverse command done (can proceed to Phase 2 or 3)
    - `discovery.md` → Phase 1 done
    - `sort.md` → Phase 2 done
    - `requirements.md` → Phase 3 done
@@ -55,6 +56,7 @@ Recognize user intent semantically → load corresponding phase file:
 
 | Phase | Intent | Steering File |
 |-------|--------|---------------|
+| Reverse | Extract requirements from existing code | `command-reverse.md` |
 | 1 | Discover/collect requirements | `phase1-requirements-discovery.md` |
 | 2 | Prioritize/sort by value | `phase2-requirements-value-sorting.md` |
 | 3 | Analyze into stories/use cases | `phase3-requirements-analysis.md` |
@@ -63,6 +65,7 @@ Recognize user intent semantically → load corresponding phase file:
 | 6 | Formalize into PRD | `phase6-requirements-specification.md` |
 
 **Rules**:
+- If user has existing codebase without documentation → Reverse command
 - If user provides raw requirements document → Phase 3 (no need to "discover")
 - Skip completed phases based on existing files
 - Ask if intent is ambiguous
@@ -74,6 +77,7 @@ Recognize user intent semantically → load corresponding phase file:
 All in `steering/` directory:
 
 - `00-interaction-protocol.md` - Core interaction guidelines
+- `command-*.md` - Auxiliary commands (reverse, prototype)
 - `phase[1-6]-*.md` - Phase instructions
 - `helper-*.md` - Standards (diagram, multi-role validation)
 - `template-*.md` - Output templates
@@ -178,9 +182,12 @@ Before submitting ANY output, verify:
 
 | Command | Intent | Steering File | Description |
 |---------|--------|---------------|-------------|
+| Reverse | Extract requirements from code | `command-reverse.md` | Reverse engineer existing codebase to extract requirements |
 | Prototype | Generate UI prototype | `command-prototype.md` | Create static HTML prototype from requirements |
 
-**Trigger**: User says "原型", "prototype", "生成原型", "create prototype"
+**Triggers**:
+- **Reverse**: User says "逆向", "reverse", "提取需求", "extract requirements", "分析代码", "analyze codebase", "现有项目"
+- **Prototype**: User says "原型", "prototype", "生成原型", "create prototype"
 
 ---
 
@@ -188,16 +195,17 @@ Before submitting ANY output, verify:
 
 ```
 .kiro/specs/[spec-name]/
-├── discovery.md
-├── sort.md
-├── requirements.md
-├── data-model.md
-├── clarification.md
-├── validation.md
-├── prd.md
-├── api.yaml
-├── rtm.md
-└── prototype/
+├── reverse.md          # From Reverse command (optional entry point)
+├── discovery.md        # Phase 1
+├── sort.md             # Phase 2
+├── requirements.md     # Phase 3
+├── data-model.md       # Phase 3
+├── clarification.md    # Phase 4
+├── validation.md       # Phase 5
+├── prd.md              # Phase 6
+├── api.yaml            # Phase 6
+├── rtm.md              # Phase 6
+└── prototype/          # Prototype command
     ├── index.html
     ├── css/
     └── pages/
