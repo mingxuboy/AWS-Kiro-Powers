@@ -22,6 +22,38 @@ inclusion: agent
 
 ---
 
+## System feature description
+
+### System Purpose
+
+[Summary System Description]
+
+### Core Capabilities
+
+| Feature | Description |
+|------|------|
+| [Feature 1] | [Brief description] |
+| [Feature 2] | [Brief description] |
+
+### Applicable Scenarios
+
+[System applicable scenarios description]
+
+### Non-Applicable Scenarios
+
+[System not applicable scenarios description]
+
+---
+
+## Change History
+
+| Version | Date | Author | Change History |
+|------|------|------|----------|
+| [Version 1] | [Date] | [Author] | [Change log] |
+| [Version 2] | [Date] | [Author] | [Change log] |
+
+---
+
 ## 1. User Personas
 
 | Persona | Description | Key Goals |
